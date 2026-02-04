@@ -130,3 +130,30 @@ footer a:hover {
     height: 60px;
 }
 
+/* ===== Hero Layout mit Logos ===== */
+.hero-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.hero-text {
+    text-align: center;
+}
+
+.hero-logo img {
+    height: 180px;
+}
+
+/* ===== Responsive (Handy) ===== */
+@media (max-width: 768px) {
+    .hero-layout {
+        flex-direction: column;
+    }
+
+    .hero-logo img {
+        height: 120px;
+    }
+}
+
