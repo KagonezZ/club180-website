@@ -137,45 +137,43 @@ footer a:hover {
                 url('assets/hero.jpg') center/cover no-repeat;
 }
 
-/* ===== Hero Layout ===== */
+/* ===== FIX: Hero Logos links & rechts erzwingen ===== */
 .hero-layout {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: nowrap;
+    width: 100%;
 }
 
-.hero-text {
-    text-align: center;
-    flex: 1;
-}
-
-.hero-text h1 {
-    font-size: 56px;
-    color: #c40000;
-}
-
-.hero-text p {
-    font-size: 22px;
-}
-
-/* ===== Logos links & rechts ===== */
 .hero-logo {
-    flex: 0 0 auto;
+    width: 25%;
+    text-align: center;
 }
 
 .hero-logo img {
-    height: 200px;
+    max-width: 100%;
+    height: 180px;
 }
 
-/* ===== Responsive (Handy) ===== */
+.hero-text {
+    width: 50%;
+    text-align: center;
+}
+
+/* ===== Mobile ===== */
 @media (max-width: 900px) {
     .hero-layout {
         flex-direction: column;
-        gap: 30px;
+    }
+
+    .hero-logo,
+    .hero-text {
+        width: 100%;
     }
 
     .hero-logo img {
         height: 120px;
     }
 }
-
