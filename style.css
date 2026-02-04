@@ -130,26 +130,48 @@ footer a:hover {
     height: 60px;
 }
 
-/* ===== Hero Layout mit Logos ===== */
+/* ===== Hero Bereich ===== */
+.hero {
+    padding: 120px 0;
+    background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+                url('assets/hero.jpg') center/cover no-repeat;
+}
+
+/* ===== Hero Layout ===== */
 .hero-layout {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 40px;
+    justify-content: space-between;
 }
 
 .hero-text {
     text-align: center;
+    flex: 1;
+}
+
+.hero-text h1 {
+    font-size: 56px;
+    color: #c40000;
+}
+
+.hero-text p {
+    font-size: 22px;
+}
+
+/* ===== Logos links & rechts ===== */
+.hero-logo {
+    flex: 0 0 auto;
 }
 
 .hero-logo img {
-    height: 180px;
+    height: 200px;
 }
 
 /* ===== Responsive (Handy) ===== */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .hero-layout {
         flex-direction: column;
+        gap: 30px;
     }
 
     .hero-logo img {
