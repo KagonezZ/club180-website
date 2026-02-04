@@ -178,41 +178,48 @@ footer a:hover {
     }
 }
 
-/* ===== Animationen ===== */
+/* ===== Startzustand (wichtig!) ===== */
+.fly-in-left,
+.fly-in-right,
+.fly-in-bottom {
+    opacity: 0;
+}
+
+/* ===== Keyframes ===== */
 @keyframes flyInLeft {
-    from {
+    0% {
         opacity: 0;
-        transform: translateX(-120px);
+        transform: translateX(-150px);
     }
-    to {
+    100% {
         opacity: 1;
         transform: translateX(0);
     }
 }
 
 @keyframes flyInRight {
-    from {
+    0% {
         opacity: 0;
-        transform: translateX(120px);
+        transform: translateX(150px);
     }
-    to {
+    100% {
         opacity: 1;
         transform: translateX(0);
     }
 }
 
 @keyframes flyInBottom {
-    from {
+    0% {
         opacity: 0;
-        transform: translateY(80px);
+        transform: translateY(120px);
     }
-    to {
+    100% {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-/* ===== Klassen ===== */
+/* ===== Animationen ===== */
 .fly-in-left {
     animation: flyInLeft 1.2s ease-out forwards;
 }
