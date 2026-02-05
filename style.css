@@ -57,10 +57,14 @@ header {
 
 /* ===== HERO ===== */
 .hero {
-    min-height: 100vh;
-    padding: 120px 0;
+    height: 100vh; /* Vollbild, keine Scroll-Leiste */
+    padding: 0; /* Padding entfernt, um Scrollen zu vermeiden */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
                 url('assets/hero.jpg') center / cover no-repeat;
+    box-sizing: border-box;
 }
 
 /* Hero Layout & Logos/Text */
@@ -68,10 +72,9 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: nowrap;
     width: 100%;
-    padding: 0 80px;
-    position: relative;
+    padding: 0 80px; /* Logos weiter außen */
+    flex-wrap: nowrap;
 }
 
 .hero-logo {
@@ -249,3 +252,4 @@ footer a:hover {
     .social-icons { flex-direction: column; gap: 15px; }
     .social-icon { width: 140px; text-align: center; }
 }
+
