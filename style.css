@@ -154,45 +154,78 @@ a.map-link:hover {
 
 /* ===== MOBILE ===== */
 @media (max-width: 900px) {
-    
+
     html, body {
-        overflow-x: hidden;   /* kein seitliches Scrollen */
-        overflow-y: auto;     /* vertikales Scrollen erlaubt */
+        height: auto;               /* WICHTIG */
+        min-height: 100%;
+        overflow-x: hidden;         /* kein seitliches Scrollen */
+        overflow-y: auto;           /* vertikal erlaubt */
+        background-color: #000;
     }
 
-.hero {
-    flex-direction: column;
-    height: auto;
-    min-height: calc(100vh - 70px);
-    padding: 30px 0;
+    header {
+        position: relative;
+        width: 100%;
+    }
+
+    .hero {
+        height: auto;               /* KEIN vh auf Mobile */
+        min-height: calc(100vh - 70px);
+        padding: 40px 0 60px;
+        background-size: cover;
+    }
+
+    .hero::before {
+        width: 220%;
+        height: 220%;
+        top: 55%;
+    }
+
+    .hero-logo {
+        position: static;
+        transform: none;
+        width: 100%;
+        text-align: center;
+        margin: 15px 0;
+    }
+
+    .hero-logo img {
+        height: 120px;
+    }
+
+    .hero-text {
+        position: static;
+        transform: none;
+        width: 100%;
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 34px;
+        white-space: normal;
+    }
+
+    .hero-text p {
+        font-size: 18px;
+    }
+
+    .hero-copyright {
+        position: relative;
+        margin-top: 30px;
+        bottom: auto;
+    }
+
+    .header-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .header-nav ul li {
+        margin: 8px 12px;
+    }
+
+    .header-nav ul li a {
+        font-size: 17px;
+    }
 }
-
-.hero-logo {
-    position: static;
-    transform: none;
-    width: 100%;
-    text-align: center;
-    margin: 15px 0;
-}
-
-.hero-text {
-    position: static;
-    transform: none;
-    width: 100%;
-    text-align: center;
-    margin: 10px 0;
-}
-
-    .hero-logo img { height: 120px; }
-    .hero-text h1 { font-size: 36px; white-space: normal; }
-    .header-nav ul li { margin: 0 15px; }
-    .header-nav ul li a { font-size: 18px; }
-}
-
-
-
-
-
-
-
-
