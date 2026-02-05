@@ -72,8 +72,8 @@ header {
 .hero-logo.right { right: 300px; }
 
 .hero-logo img {
-    width: 150%;
-    height: auto;
+    height: 270px;
+    width: auto;
 }
 
 /* Hero Text mittig */
@@ -126,6 +126,7 @@ a.map-link:hover {
     .header-nav ul li { margin: 0 15px; }
     .header-nav ul li a { font-size: 18px; }
 }
+
 
 
 
