@@ -164,18 +164,20 @@ footer a:hover {
 }
 
 /* ===== Google Maps Link ===== */
-.map-link,
-.map-link:visited,
-.map-link:active,
-.map-link:hover {
-    color: #ffffff;
+a.map-link,
+a.map-link:link,
+a.map-link:visited,
+a.map-link:hover,
+a.map-link:active,
+a.map-link:focus {
+    color: #ffffff !important;
     text-decoration: none;
-    font-weight: bold;
 }
 
-.map-link:hover {
+a.map-link:hover {
     text-decoration: underline;
 }
+
 
 /* ===== Animation Startzustand ===== */
 .fly-in-left,
@@ -251,4 +253,14 @@ footer a:hover {
         white-space: normal;
         font-size: 40px;
     }
+}
+
+/* ===== HINTERGRUND IMMER VOLLE HÖHE ===== */
+html, body {
+    height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #000 !important;
 }
