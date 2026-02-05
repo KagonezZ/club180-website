@@ -1,22 +1,31 @@
-/* ===== Grundlayout ===== */
-html, body {
+/* ===== GLOBAL ===== */
+html {
+    height: 100%;
+    background-color: #111;
+}
+
+body {
+    min-height: 100vh;
     margin: 0;
     padding: 0;
-    min-height: 100%;
     background-color: #111;
+    font-family: 'Open Sans', sans-serif;
+    color: #ffffff;
 }
 
 /* ===== Container ===== */
 .container {
     width: 90%;
     max-width: 1200px;
-    margin: auto;
+    margin: 0 auto;
+    background: transparent;
 }
 
 /* ===== Header ===== */
 header {
     background: #000;
     border-bottom: 4px solid #c40000;
+    width: 100%;
 }
 
 header .container {
@@ -28,223 +37,4 @@ header .container {
 .logo {
     font-family: 'Montserrat', sans-serif;
     font-size: 28px;
-    color: #c40000;
-    font-weight: bold;
-}
-
-/* ===== Navigation ===== */
-nav ul {
-    list-style: none;
-    display: flex;
-    padding: 0;
-}
-
-nav ul li {
-    margin-left: 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #ffffff;
-    font-weight: bold;
-}
-
-nav ul li a:hover {
-    color: #c40000;
-}
-
-/* ===== Hero Bereich ===== */
-.hero {
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-                url('assets/hero.jpg') center/cover no-repeat;
-    padding: 120px 0;
-    text-align: center;
-}
-
-.hero h1 {
-    font-size: 48px;
-    color: #c40000;
-}
-
-.hero p {
-    font-size: 20px;
-    margin-top: 10px;
-}
-
-/* ===== Content ===== */
-.content {
-    padding: 60px 0;
-}
-
-.content h1 {
-    color: #c40000;
-}
-
-/* ===== Galerie ===== */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-}
-
-.gallery img {
-    width: 100%;
-    border-radius: 10px;
-    border: 3px solid #c40000;
-}
-
-/* ===== Buttons ===== */
-.button {
-    background: #c40000;
-    color: #ffffff;
-    padding: 12px 25px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    display: inline-block;
-    margin-top: 15px;
-}
-
-.button:hover {
-    background: #ff1a1a;
-}
-
-/* ===== Footer ===== */
-footer {
-    background: #000;
-    padding: 25px 0;
-    text-align: center;
-    border-top: 4px solid #c40000;
-}
-
-footer a {
-    color: #c40000;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-.logo img {
-    height: 60px;
-}
-
-/* ===== Hero Bereich ===== */
-.hero {
-    padding: 120px 0;
-    background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-                url('assets/hero.jpg') center/cover no-repeat;
-}
-
-/* ===== FIX: Hero Logos links & rechts erzwingen ===== */
-.hero-layout {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-    width: 100%;
-}
-
-.hero-logo {
-    width: 25%;
-    text-align: center;
-}
-
-.hero-logo img {
-    max-width: 100%;
-    height: 180px;
-}
-
-.hero-text {
-    width: 50%;
-    text-align: center;
-}
-
-.hero-text h1 {
-    font-size: 52px;
-    color: #c40000;
-    white-space: nowrap;
-}
-
-/* ===== Mobile ===== */
-@media (max-width: 900px) {
-    .hero-text h1 {
-        white-space: normal;
-        font-size: 40px;
-    }
-}
-
-
-    .hero-logo,
-    .hero-text {
-        width: 100%;
-    }
-
-    .hero-logo img {
-        height: 120px;
-    }
-}
-
-/* ===== Startzustand (wichtig!) ===== */
-.fly-in-left,
-.fly-in-right,
-.fly-in-bottom {
-    opacity: 0;
-}
-
-/* ===== Keyframes ===== */
-@keyframes flyInLeft {
-    0% {
-        opacity: 0;
-        transform: translateX(-150px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes flyInRight {
-    0% {
-        opacity: 0;
-        transform: translateX(150px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes flyInBottom {
-    0% {
-        opacity: 0;
-        transform: translateY(120px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* ===== Animationen ===== */
-.fly-in-left {
-    animation: flyInLeft 1.2s ease-out forwards;
-}
-
-.fly-in-right {
-    animation: flyInRight 1.2s ease-out forwards;
-}
-
-.fly-in-bottom {
-    animation: flyInBottom 1.2s ease-out forwards;
-}
-
-.hero,
-.content,
-footer,
-header {
-    width: 100%;
-}
-
+    color: #c400
