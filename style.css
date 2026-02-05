@@ -231,3 +231,14 @@ footer a:hover {
 .fly-in-bottom {
     animation: flyInBottom 1.2s ease-out forwards;
 }
+
+/* ===== Google Maps Link ===== */
+.map-link {
+    color: #c40000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.map-link:hover {
+    text-decoration: underline;
+}
