@@ -62,6 +62,20 @@ header {
         url('assets/hero.jpg') center/cover no-repeat;           /* Original Hero-Bild */
 }
 
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;      /* größer als Hero-Bereich */
+    height: 120%;     /* proportional vergrößert */
+    background: url('assets/dartscheibe.png') center/contain no-repeat;
+    opacity: 0.2;       /* verblasst */
+    filter: grayscale(100%) brightness(60%);
+    transform: translate(-50%, -50%); /* zentriert */
+    z-index: 0;         /* unter Logos/Text */
+}
+
 /* Logos links/rechts */
 .hero-logo {
     position: absolute;
@@ -144,6 +158,7 @@ a.map-link:hover {
     .header-nav ul li { margin: 0 15px; }
     .header-nav ul li a { font-size: 18px; }
 }
+
 
 
 
