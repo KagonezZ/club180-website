@@ -64,10 +64,10 @@ header {
 .hero::before {
     content: '';
     position: absolute;
-    top: 70%;
+    top: 65%;
     left: 50%;
-    width: 180%;      /* größer als Hero-Bereich */
-    height: 180%;     /* proportional vergrößert */
+    width: 175%;      /* größer als Hero-Bereich */
+    height: 175%;     /* proportional vergrößert */
     background: url('assets/Dartscheibe.png') center/contain no-repeat;
     opacity: 0.2;       /* verblasst */
     filter: grayscale(100%) brightness(60%);
@@ -157,6 +157,7 @@ a.map-link:hover {
     .header-nav ul li { margin: 0 15px; }
     .header-nav ul li a { font-size: 18px; }
 }
+
 
 
 
