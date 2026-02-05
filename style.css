@@ -106,52 +106,9 @@ a.map-link:hover {
     text-decoration: underline;
 }
 
-/* ===== Footer unten im Hero ===== */
-.hero-footer {
-    position: absolute;
-    bottom: 30px;
-    width: 100%;
-    text-align: center;
-}
-
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.social-icon {
-    display: inline-block;
-    background-color: #c40000;
-    color: #ffffff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.social-icon:hover {
-    background-color: #ff1a1a;
-    color: #ffffff;
-}
-
 /* ===== ANIMATIONEN ===== */
 .fly-in-left { opacity: 0; animation: flyInLeft 1.2s ease-out forwards; }
 .fly-in-right { opacity: 0; animation: flyInRight 1.2s ease-out forwards; }
 .fly-in-bottom { opacity: 0; animation: flyInBottom 1s ease-out forwards; }
 
-@keyframes flyInLeft { 0% { opacity:0; transform:translateX(-150px); } 100% { opacity:1; transform:translateX(0);} }
-@keyframes flyInRight { 0% { opacity:0; transform:translateX(150px);} 100% { opacity:1; transform:translateX(0);} }
-@keyframes flyInBottom {0% {opacity:0; transform:translateY(80px);} 100% {opacity:1; transform:translateY(0);}}
-
-/* ===== MOBILE ===== */
-@media (max-width: 900px) {
-    .hero-logo, .hero-text { width: 100%; position: static; transform: none; margin: 10px 0; }
-    .hero-logo img { height: 120px; }
-    .hero-text h1 { font-size: 36px; white-space: normal; }
-    .header-nav ul li { margin: 0 15px; }
-    .header-nav ul li a { font-size: 18px; }
-    .social-icons { flex-direction: column; gap: 15px; }
-    .social-icon { width: 140px; text-align: center; }
-}
+@keyframes flyInLeft { 0% { opacity:0; transform:translateX(-150px); } 100% { opacity:1; transform:translateX(0);}
