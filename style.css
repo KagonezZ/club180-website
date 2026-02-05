@@ -101,7 +101,7 @@ header {
 
 /* ===== Hero Unterer Bereich ===== */
 .hero-footer {
-    background-color: #111; /* etwas helleres Schwarz für Abgrenzung */
+    background-color: #111; /* leicht abgesetzt */
     padding: 40px 0;
     width: 100%;
     text-align: center;
@@ -114,7 +114,7 @@ header {
     gap: 20px;
 }
 
-/* Kontakt Info */
+/* Adresse */
 .contact-info p {
     margin: 5px 0;
     color: #ffffff;
@@ -153,6 +153,44 @@ header {
 .social-icon:hover {
     background-color: #ff1a1a;
     color: #ffffff;
+}
+
+/* ===== Animationen ===== */
+.fly-in-left {
+    opacity: 0;
+    animation: flyInLeft 1.2s ease-out forwards;
+}
+
+.fly-in-right {
+    opacity: 0;
+    animation: flyInRight 1.2s ease-out forwards;
+}
+
+@keyframes flyInLeft {
+    0% { opacity: 0; transform: translateX(-150px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes flyInRight {
+    0% { opacity: 0; transform: translateX(150px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 900px) {
+    .hero-footer-content {
+        gap: 30px;
+    }
+
+    .social-icons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .social-icon {
+        width: 140px;
+        text-align: center;
+    }
 }
 
 /* ===== Google Maps Link ===== */
@@ -285,4 +323,5 @@ footer a:hover {
         font-size: 18px; /* kleinere Schrift auf Handy */
     }
 }
+
 
