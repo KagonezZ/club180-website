@@ -101,21 +101,21 @@ header {
 /* Hero Text mittig */
 .hero-text {
     position: absolute;
-    inset: 0;                 /* nimmt volle Fläche ein */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 3;
     pointer-events: none;
 }
 
 .hero-text h1 {
-    font-size: 42px;          /* Endgröße FIX */
+    font-size: 42px;
     color: #c40000;
     font-weight: 900;
     white-space: nowrap;
+
     transform-origin: center center;
-    transform: scale(0.05) translateZ(0);
+    transform: translate(-50%, -50%) scale(0.05);
     opacity: 0;
 
     text-shadow:
@@ -123,6 +123,9 @@ header {
         3px 3px 6px rgba(0,0,0,0.25);
 
     animation: growFromBullseye 2s ease-out forwards;
+    position: absolute;
+    top: 50%;
+    left: 50%;
 }
 
 .hero-text p {
@@ -162,11 +165,11 @@ a.map-link:hover {
 @keyframes flyInBottom { 0% {opacity:0; transform:translateY(80px);} 100% {opacity:1; transform:translateY(0);} }
 @keyframes growFromBullseye {
     0% {
-        transform: scale(0.05) translateZ(0);
+        transform: translate(-50%, -50%) scale(0.05);
         opacity: 0;
     }
     100% {
-        transform: scale(1) translateZ(30px);
+        transform: translate(-50%, -50%) scale(1);
         opacity: 1;
     }
 }
@@ -184,5 +187,6 @@ a.map-link:hover {
     .header-nav ul li { margin: 0 15px; }
     .header-nav ul li a { font-size: 18px; }
 }
+
 
 
