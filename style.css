@@ -73,7 +73,7 @@ header {
 }
 
 .hero-logo.right {
-    right: 230px;
+    right: 250px;
 }
 
 .hero-logo img {
@@ -131,6 +131,7 @@ a.map-link:hover {
     .header-nav ul li { margin: 0 15px; }
     .header-nav ul li a { font-size: 18px; }
 }
+
 
 
 
