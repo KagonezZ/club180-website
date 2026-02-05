@@ -66,16 +66,18 @@ nav ul li a:hover {
                 url('assets/hero.jpg') center / cover no-repeat;
 }
 
-/* ===== Hero Layout ===== */
+/* ===== Hero Layout & Logos/Text ===== */
 .hero-layout {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: nowrap;
     width: 100%;
-    padding: 0 80px; /* Logos weiter nach außen */
+    padding: 0 80px; /* Logos weiter außen */
+    position: relative;
 }
 
+/* Hero Logos */
 .hero-logo {
     width: 25%;
     text-align: center;
@@ -86,15 +88,21 @@ nav ul li a:hover {
     height: 180px;
 }
 
+/* Hero Text */
 .hero-text {
     width: 50%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* vertikal zentriert */
 }
 
 .hero-text h1 {
-    font-size: 42px; /* kleiner für eine Zeile */
+    font-size: 42px; /* jetzt eine Zeile auf Desktop */
     color: #c40000;
     white-space: nowrap;
+    margin: 0;
 }
 
 .hero-text p {
@@ -175,31 +183,33 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* ===== Startzustand & Animationen ===== */
+/* ===== Animations: Startzustand ===== */
 .fly-in-left,
 .fly-in-right,
 .fly-in-bottom {
     opacity: 0;
 }
 
+/* ===== Keyframes ===== */
 @keyframes flyInLeft {
-    from { opacity: 0; transform: translateX(-150px); }
-    to { opacity: 1; transform: translateX(0); }
+    0% { opacity: 0; transform: translateX(-150px); }
+    100% { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes flyInRight {
-    from { opacity: 0; transform: translateX(150px); }
-    to { opacity: 1; transform: translateX(0); }
+    0% { opacity: 0; transform: translateX(150px); }
+    100% { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes flyInBottom {
-    from { opacity: 0; transform: translateY(120px); }
-    to { opacity: 1; transform: translateY(0); }
+    0% { opacity: 0; transform: translateY(80px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
-.fly-in-left { animation: flyInLeft 1.2s ease-out forwards; }
-.fly-in-right { animation: flyInRight 1.2s ease-out forwards; }
-.fly-in-bottom { animation: flyInBottom 1.2s ease-out forwards; }
+/* ===== Animationen anwenden ===== */
+.fly-in-left { animation: flyInLeft 1s ease-out forwards; }
+.fly-in-right { animation: flyInRight 1s ease-out forwards; }
+.fly-in-bottom { animation: flyInBottom 1s ease-out forwards; }
 
 /* ===== Mobile ===== */
 @media (max-width: 900px) {
