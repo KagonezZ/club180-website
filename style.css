@@ -73,6 +73,7 @@ header {
     filter: grayscale(100%) brightness(60%);
     transform: translate(-50%, -50%); /* zentriert */
     z-index: 2;         /* vor Logos/ hinter Text */
+    pointer-events: none;
 }
 
 /* Logos links/rechts */
@@ -158,6 +159,7 @@ a.map-link:hover {
     .header-nav ul li { margin: 0 15px; }
     .header-nav ul li a { font-size: 18px; }
 }
+
 
 
 
