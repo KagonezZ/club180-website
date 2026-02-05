@@ -21,15 +21,15 @@ header {
     background-color: #000;
     border-bottom: 4px solid #c40000;
     width: 100%;
-    padding: 30px 0; /* Abstand oben & unten */
+    padding: 30px 0;
     box-sizing: border-box;
 }
 
 /* ===== Navigation zentriert ===== */
 .header-nav {
     display: flex;
-    justify-content: center; /* horizontal zentriert */
-    align-items: center;     /* vertikal zentriert */
+    justify-content: center;
+    align-items: center;
 }
 
 .header-nav ul {
@@ -40,15 +40,15 @@ header {
 }
 
 .header-nav ul li {
-    margin: 0 25px; /* Abstand zwischen Menüpunkten */
+    margin: 0 25px;
 }
 
 .header-nav ul li a {
     text-decoration: none;
     color: #ffffff;
     font-weight: bold;
-    font-size: 22px; /* große Schrift */
-    padding: 10px 0; /* vertikaler Abstand */
+    font-size: 22px;
+    padding: 10px 0;
 }
 
 .header-nav ul li a:hover {
@@ -63,18 +63,17 @@ header {
                 url('assets/hero.jpg') center / cover no-repeat;
 }
 
-/* ===== Hero Layout & Logos/Text ===== */
+/* Hero Layout & Logos/Text */
 .hero-layout {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: nowrap;
     width: 100%;
-    padding: 0 80px; /* Logos weiter außen */
+    padding: 0 80px;
     position: relative;
 }
 
-/* Hero Logos */
 .hero-logo {
     width: 25%;
     text-align: center;
@@ -85,14 +84,13 @@ header {
     height: 180px;
 }
 
-/* Hero Text */
 .hero-text {
     width: 50%;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; /* vertikal zentriert */
+    align-items: center;
 }
 
 .hero-text h1 {
@@ -107,13 +105,8 @@ header {
     margin-top: 10px;
 }
 
-/* ===== Google Maps Link ===== */
-a.map-link,
-a.map-link:link,
-a.map-link:visited,
-a.map-link:active,
-a.map-link:hover,
-a.map-link:focus {
+/* Google Maps Link */
+a.map-link {
     color: #ffffff !important;
     text-decoration: none;
     font-weight: bold;
@@ -121,9 +114,10 @@ a.map-link:focus {
 
 a.map-link:hover {
     text-decoration: underline;
+    color: #c40000 !important;
 }
 
-/* ===== Hero Unterer Bereich (Adresse + Social Media) ===== */
+/* ===== Hero Footer ===== */
 .hero-footer {
     background-color: #111;
     padding: 40px 0;
@@ -138,7 +132,6 @@ a.map-link:hover {
     gap: 20px;
 }
 
-/* Adresse */
 .contact-info p {
     margin: 5px 0;
     color: #ffffff;
@@ -156,7 +149,6 @@ a.map-link:hover {
     text-decoration: underline;
 }
 
-/* Social Media Icons */
 .social-icons {
     display: flex;
     gap: 20px;
@@ -179,38 +171,16 @@ a.map-link:hover {
     color: #ffffff;
 }
 
-/* ===== Animations ===== */
-.fly-in-left {
-    opacity: 0;
-    animation: flyInLeft 1.2s ease-out forwards;
-}
+/* ===== Animationen ===== */
+.fly-in-left { opacity: 0; animation: flyInLeft 1.2s ease-out forwards; }
+.fly-in-right { opacity: 0; animation: flyInRight 1.2s ease-out forwards; }
+.fly-in-bottom { opacity: 0; animation: flyInBottom 1s ease-out forwards; }
 
-.fly-in-right {
-    opacity: 0;
-    animation: flyInRight 1.2s ease-out forwards;
-}
+@keyframes flyInLeft { 0% { opacity:0; transform:translateX(-150px); } 100% { opacity:1; transform:translateX(0);} }
+@keyframes flyInRight { 0% { opacity:0; transform:translateX(150px);} 100% { opacity:1; transform:translateX(0);} }
+@keyframes flyInBottom {0% {opacity:0; transform:translateY(80px);} 100% {opacity:1; transform:translateY(0);}}
 
-.fly-in-bottom {
-    opacity: 0;
-    animation: flyInBottom 1s ease-out forwards;
-}
-
-@keyframes flyInLeft {
-    0% { opacity: 0; transform: translateX(-150px); }
-    100% { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes flyInRight {
-    0% { opacity: 0; transform: translateX(150px); }
-    100% { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes flyInBottom {
-    0% { opacity: 0; transform: translateY(80px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
-
-/* ===== Content ===== */
+/* ===== Content Bereich ===== */
 .content {
     padding: 60px 0;
     width: 100%;
@@ -269,44 +239,13 @@ footer a:hover {
 
 /* ===== Mobile ===== */
 @media (max-width: 900px) {
-    .hero-layout {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .hero-logo,
-    .hero-text {
-        width: 100%;
-    }
-
-    .hero-logo img {
-        height: 120px;
-    }
-
-    .hero-text h1 {
-        white-space: normal;
-        font-size: 36px;
-    }
-
-    .header-nav ul li {
-        margin: 0 15px;
-    }
-
-    .header-nav ul li a {
-        font-size: 18px;
-    }
-
-    .hero-footer-content {
-        gap: 30px;
-    }
-
-    .social-icons {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .social-icon {
-        width: 140px;
-        text-align: center;
-    }
+    .hero-layout { flex-direction: column; gap: 30px; }
+    .hero-logo, .hero-text { width: 100%; }
+    .hero-logo img { height: 120px; }
+    .hero-text h1 { white-space: normal; font-size: 36px; }
+    .header-nav ul li { margin: 0 15px; }
+    .header-nav ul li a { font-size: 18px; }
+    .hero-footer-content { gap: 30px; }
+    .social-icons { flex-direction: column; gap: 15px; }
+    .social-icon { width: 140px; text-align: center; }
 }
