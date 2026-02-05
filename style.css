@@ -21,6 +21,7 @@ header {
     background: #000;
     border-bottom: 4px solid #c40000;
     width: 100%;
+    padding-bottom: 15px; /* Abstand unter den Links / größerer Header */
 }
 
 header .container {
@@ -52,6 +53,8 @@ nav ul li a {
     text-decoration: none;
     color: #ffffff;
     font-weight: bold;
+    font-size: 18px; /* größer */
+    padding: 8px 0;  /* vertikaler Abstand */
 }
 
 nav ul li a:hover {
@@ -232,3 +235,4 @@ footer a:hover {
         font-size: 36px;
     }
 }
+
