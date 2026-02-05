@@ -3,17 +3,11 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    overflow: hidden; /* kein Scrollen */
     background-color: #000 !important;
     font-family: 'Open Sans', sans-serif;
     color: #ffffff;
     box-sizing: border-box;
-}
-
-/* ===== Container ===== */
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 /* ===== HEADER ===== */
@@ -55,10 +49,10 @@ header {
     color: #c40000;
 }
 
-/* ===== HERO STARTSEITE ===== */
+/* ===== HERO ===== */
 .hero {
-    min-height: 100vh;
-    padding: 120px 0;
+    height: 100vh; /* füllt den kompletten Viewport */
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -75,13 +69,8 @@ header {
     width: 180px;
 }
 
-.hero-logo.left {
-    left: 40px;
-}
-
-.hero-logo.right {
-    right: 40px;
-}
+.hero-logo.left { left: 40px; }
+.hero-logo.right { right: 40px; }
 
 .hero-logo img {
     width: 100%;
@@ -117,27 +106,12 @@ a.map-link:hover {
     text-decoration: underline;
 }
 
-/* ===== CONTENT ===== */
-.content {
-    padding: 60px 0;
+/* ===== Footer unten im Hero ===== */
+.hero-footer {
+    position: absolute;
+    bottom: 30px;
     width: 100%;
-}
-
-.content h1 {
-    color: #c40000;
-}
-
-.content p {
-    color: #ffffff;
-}
-
-/* ===== Footer mit Social Icons ===== */
-footer {
-    background-color: #111;
-    padding: 25px 0;
     text-align: center;
-    border-top: 4px solid #c40000;
-    width: 100%;
 }
 
 .social-icons {
