@@ -155,29 +155,31 @@ a.map-link:hover {
 /* ===== MOBILE ===== */
 @media (max-width: 900px) {
 
+    /* ✅ Mobile darf scrollen */
     html, body {
-        height: auto;               /* WICHTIG */
+        height: auto;
         min-height: 100%;
-        overflow-x: hidden;         /* kein seitliches Scrollen */
-        overflow-y: auto;           /* vertikal erlaubt */
+        overflow-x: hidden;
+        overflow-y: auto;
         background-color: #000;
     }
 
     header {
-        position: relative;
         width: 100%;
+        position: relative;
     }
 
+    /* ❗ KEIN vh auf Mobile */
     .hero {
-        height: auto;               /* KEIN vh auf Mobile */
-        min-height: calc(100vh - 70px);
-        padding: 40px 0 60px;
+        height: auto;
+        min-height: 100svh;   /* 🔥 WICHTIG: mobiles Viewport-Unit */
+        padding: 40px 0 80px;
         background-size: cover;
     }
 
     .hero::before {
-        width: 220%;
-        height: 220%;
+        width: 240%;
+        height: 240%;
         top: 55%;
     }
 
@@ -197,23 +199,24 @@ a.map-link:hover {
         position: static;
         transform: none;
         width: 100%;
-        margin: 15px 0;
+        margin: 20px 0;
         text-align: center;
     }
 
     .hero-text h1 {
-        font-size: 34px;
+        font-size: 32px;
         white-space: normal;
     }
 
     .hero-text p {
-        font-size: 18px;
+        font-size: 17px;
     }
 
     .hero-copyright {
         position: relative;
-        margin-top: 30px;
         bottom: auto;
+        margin-top: 30px;
+        text-align: center;
     }
 
     .header-nav ul {
@@ -222,10 +225,10 @@ a.map-link:hover {
     }
 
     .header-nav ul li {
-        margin: 8px 12px;
+        margin: 6px 12px;
     }
 
     .header-nav ul li a {
-        font-size: 17px;
+        font-size: 16px;
     }
 }
