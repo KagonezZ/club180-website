@@ -63,7 +63,7 @@ header {
 /* Logos links/rechts */
 .hero-logo {
     position: absolute;
-    top: 30%;
+    top: 35%;
     transform: translateY(-50%);
     width: 180px;
 }
@@ -126,6 +126,7 @@ a.map-link:hover {
     .header-nav ul li { margin: 0 15px; }
     .header-nav ul li a { font-size: 18px; }
 }
+
 
 
 
