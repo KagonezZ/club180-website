@@ -1,12 +1,12 @@
 /* ===== GLOBAL ===== */
 html, body {
-    height: 100%;
     margin: 0;
     padding: 0;
+    height: 100%;
     overflow: hidden; /* kein Scrollen */
-    background-color: #000 !important;
+    background-color: #000;
     font-family: 'Open Sans', sans-serif;
-    color: #ffffff;
+    color: #fff;
     box-sizing: border-box;
 }
 
@@ -19,7 +19,7 @@ header {
     box-sizing: border-box;
 }
 
-/* ===== NAVIGATION ZENTRIERT ===== */
+/* ===== NAVIGATION ===== */
 .header-nav {
     display: flex;
     justify-content: center;
@@ -39,7 +39,7 @@ header {
 
 .header-nav ul li a {
     text-decoration: none;
-    color: #ffffff;
+    color: #fff;
     font-weight: bold;
     font-size: 22px;
     padding: 10px 0;
@@ -51,14 +51,13 @@ header {
 
 /* ===== HERO ===== */
 .hero {
-    height: 100vh; /* füllt den kompletten Viewport */
-    width: 100%;
+    height: calc(100vh - 82px); /* Header abziehen (30px oben + 30px unten + Border) */
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
     background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
                 url('assets/hero.jpg') center / cover no-repeat;
-    position: relative;
 }
 
 /* Logos links/rechts */
@@ -94,15 +93,14 @@ header {
     margin-top: 10px;
 }
 
-/* Google Maps Link */
 a.map-link {
-    color: #ffffff !important;
+    color: #ffffff;
     text-decoration: none;
     font-weight: bold;
 }
 
 a.map-link:hover {
-    color: #c40000 !important;
+    color: #c40000;
     text-decoration: underline;
 }
 
@@ -111,4 +109,20 @@ a.map-link:hover {
 .fly-in-right { opacity: 0; animation: flyInRight 1.2s ease-out forwards; }
 .fly-in-bottom { opacity: 0; animation: flyInBottom 1s ease-out forwards; }
 
-@keyframes flyInLeft { 0% { opacity:0; transform:translateX(-150px); } 100% { opacity:1; transform:translateX(0);}
+@keyframes flyInLeft { 0% {opacity:0; transform:translateX(-150px);} 100% {opacity:1; transform:translateX(0);} }
+@keyframes flyInRight { 0% {opacity:0; transform:translateX(150px);} 100% {opacity:1; transform:translateX(0);} }
+@keyframes flyInBottom { 0% {opacity:0; transform:translateY(80px);} 100% {opacity:1; transform:translateY(0);} }
+
+/* ===== MOBILE ===== */
+@media (max-width: 900px) {
+    .hero-logo, .hero-text {
+        position: static;
+        transform: none;
+        width: 100%;
+        margin: 10px 0;
+    }
+    .hero-logo img { height: 120px; }
+    .hero-text h1 { font-size: 36px; white-space: normal; }
+    .header-nav ul li { margin: 0 15px; }
+    .header-nav ul li a { font-size: 18px; }
+}
