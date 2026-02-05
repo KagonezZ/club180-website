@@ -1,14 +1,9 @@
 /* ===== GLOBAL ===== */
-html {
+html, body {
     height: 100%;
-    background-color: #111;
-}
-
-body {
-    min-height: 100vh;
     margin: 0;
     padding: 0;
-    background-color: #111;
+    background-color: #000 !important;
     font-family: 'Open Sans', sans-serif;
     color: #ffffff;
 }
@@ -71,14 +66,14 @@ nav ul li a:hover {
                 url('assets/hero.jpg') center / cover no-repeat;
 }
 
-/* Layout */
+/* ===== Hero Layout ===== */
 .hero-layout {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: nowrap;
     width: 100%;
-    padding: 0 60px;
+    padding: 0 80px; /* Logos weiter nach außen */
 }
 
 .hero-logo {
@@ -88,7 +83,7 @@ nav ul li a:hover {
 
 .hero-logo img {
     max-width: 100%;
-    height: 200px;
+    height: 180px;
 }
 
 .hero-text {
@@ -97,7 +92,7 @@ nav ul li a:hover {
 }
 
 .hero-text h1 {
-    font-size: 52px;
+    font-size: 42px; /* kleiner für eine Zeile */
     color: #c40000;
     white-space: nowrap;
 }
@@ -105,6 +100,22 @@ nav ul li a:hover {
 .hero-text p {
     font-size: 20px;
     margin-top: 10px;
+}
+
+/* ===== Google Maps Link ===== */
+a.map-link,
+a.map-link:link,
+a.map-link:visited,
+a.map-link:active,
+a.map-link:hover,
+a.map-link:focus {
+    color: #ffffff !important;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a.map-link:hover {
+    text-decoration: underline;
 }
 
 /* ===== Content ===== */
@@ -164,75 +175,31 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* ===== Google Maps Link ===== */
-a.map-link,
-a.map-link:link,
-a.map-link:visited,
-a.map-link:hover,
-a.map-link:active,
-a.map-link:focus {
-    color: #ffffff !important;
-    text-decoration: none;
-}
-
-a.map-link:hover {
-    text-decoration: underline;
-}
-
-
-/* ===== Animation Startzustand ===== */
+/* ===== Startzustand & Animationen ===== */
 .fly-in-left,
 .fly-in-right,
 .fly-in-bottom {
     opacity: 0;
 }
 
-/* ===== Keyframes ===== */
 @keyframes flyInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-150px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+    from { opacity: 0; transform: translateX(-150px); }
+    to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes flyInRight {
-    from {
-        opacity: 0;
-        transform: translateX(150px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+    from { opacity: 0; transform: translateX(150px); }
+    to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes flyInBottom {
-    from {
-        opacity: 0;
-        transform: translateY(120px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(120px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* ===== Animationen ===== */
-.fly-in-left {
-    animation: flyInLeft 1.2s ease-out forwards;
-}
-
-.fly-in-right {
-    animation: flyInRight 1.2s ease-out forwards;
-}
-
-.fly-in-bottom {
-    animation: flyInBottom 1.2s ease-out forwards;
-}
+.fly-in-left { animation: flyInLeft 1.2s ease-out forwards; }
+.fly-in-right { animation: flyInRight 1.2s ease-out forwards; }
+.fly-in-bottom { animation: flyInBottom 1.2s ease-out forwards; }
 
 /* ===== Mobile ===== */
 @media (max-width: 900px) {
@@ -252,17 +219,6 @@ a.map-link:hover {
 
     .hero-text h1 {
         white-space: normal;
-        font-size: 40px;
+        font-size: 36px;
     }
 }
-
-/* ===== HINTERGRUND IMMER VOLLE HÖHE ===== */
-html, body {
-    height: 100%;
-}
-
-body {
-    min-height: 100vh;
-    background-color: #000 !important;
-}
-
