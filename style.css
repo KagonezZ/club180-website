@@ -21,25 +21,15 @@ header {
     background: #000;
     border-bottom: 4px solid #c40000;
     width: 100%;
-    /* Oben und unten genug Platz, damit Menü mittig erscheint */
-    padding: 20px 0; 
+    padding: 20px 0; /* Abstand oben/unten */
     box-sizing: border-box;
 }
 
-/* Container für Logo + Navigation */
+/* Container nur für Navigation, mittig */
 header .container {
     display: flex;
-    justify-content: space-between;
-    align-items: center; /* vertikal zentriert */
-    gap: 50px; /* Abstand zwischen Logo und Menü */
-}
-
-/* Logo */
-.logo {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 28px;
-    color: #c40000;
-    font-weight: bold;
+    justify-content: center; /* horizontal zentrieren */
+    align-items: center;     /* vertikal zentrieren */
 }
 
 /* Navigation */
@@ -51,16 +41,16 @@ nav ul {
 }
 
 nav ul li {
-    margin-left: 20px;
+    margin: 0 25px; /* Abstand zwischen Menüpunkten */
 }
 
-/* Menütexte größer + vertikal mehr Abstand */
+/* Menütexte größer + vertikal mittig */
 nav ul li a {
     text-decoration: none;
     color: #ffffff;
     font-weight: bold;
-    font-size: 22px; /* größerer Text */
-    padding: 10px 0;  /* Abstand oben/unten, damit mittig */
+    font-size: 22px; /* größere Schrift */
+    padding: 10px 0; /* vertikaler Abstand */
 }
 
 nav ul li a:hover {
@@ -241,6 +231,7 @@ footer a:hover {
         font-size: 36px;
     }
 }
+
 
 
 
