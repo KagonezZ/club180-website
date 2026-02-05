@@ -154,17 +154,41 @@ a.map-link:hover {
 
 /* ===== MOBILE ===== */
 @media (max-width: 900px) {
-    .hero-logo, .hero-text {
-        position: static;
-        transform: none;
-        width: 100%;
-        margin: 10px 0;
+    
+    html, body {
+        overflow-x: hidden;   /* kein seitliches Scrollen */
+        overflow-y: auto;     /* vertikales Scrollen erlaubt */
     }
+
+.hero {
+    flex-direction: column;
+    height: auto;
+    min-height: calc(100vh - 70px);
+    padding: 30px 0;
+}
+
+.hero-logo {
+    position: static;
+    transform: none;
+    width: 100%;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.hero-text {
+    position: static;
+    transform: none;
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+}
+
     .hero-logo img { height: 120px; }
     .hero-text h1 { font-size: 36px; white-space: normal; }
     .header-nav ul li { margin: 0 15px; }
     .header-nav ul li a { font-size: 18px; }
 }
+
 
 
 
