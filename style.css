@@ -101,24 +101,27 @@ header {
 /* Hero Text mittig */
 .hero-text {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) perspective(800px);
-    z-index: 3;               /* über Dartscheibe */
-    text-align: center;
+    inset: 0;                 /* nimmt volle Fläche ein */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    pointer-events: none;
 }
 
 .hero-text h1 {
-    font-size: 14px;           /* startet ganz klein im Bullseye */
+    font-size: 42px;          /* Endgröße FIX */
     color: #c40000;
     font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    line-height: 1.1;
-    transform: translateZ(0) scale(1);
+    white-space: nowrap;
     transform-origin: center center;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3),
-                 2px 2px 4px rgba(0,0,0,0.2);
+    transform: scale(0.05) translateZ(0);
+    opacity: 0;
+
+    text-shadow:
+        1px 1px 2px rgba(0,0,0,0.3),
+        3px 3px 6px rgba(0,0,0,0.25);
+
     animation: growFromBullseye 2s ease-out forwards;
 }
 
@@ -159,13 +162,11 @@ a.map-link:hover {
 @keyframes flyInBottom { 0% {opacity:0; transform:translateY(80px);} 100% {opacity:1; transform:translateY(0);} }
 @keyframes growFromBullseye {
     0% {
-        font-size: 6px;      /* fast unsichtbar */
-        transform: translateZ(0) scale(0.1);
+        transform: scale(0.05) translateZ(0);
         opacity: 0;
     }
     100% {
-        font-size: 42px;     /* Endgröße */
-        transform: translateZ(30px) scale(1);
+        transform: scale(1) translateZ(30px);
         opacity: 1;
     }
 }
@@ -183,4 +184,5 @@ a.map-link:hover {
     .header-nav ul li { margin: 0 15px; }
     .header-nav ul li a { font-size: 18px; }
 }
+
 
