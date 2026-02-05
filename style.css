@@ -110,7 +110,7 @@ header {
     margin: 0;
     opacity: 0;
     animation: flyInBottom 1s ease-out forwards;
-    animation-delay: 1.4s; /* ⬅️ WICHTIG: nach den Logos */
+    animation-delay: 1.2s; /* ⬅️ WICHTIG: nach den Logos */
 }
 
 .hero-text p {
@@ -118,7 +118,7 @@ header {
     margin-top: 10px;
     opacity: 0;
     animation: flyInBottom 1s ease-out forwards;
-    animation-delay: 1.7s;
+    animation-delay: 1.5s;
 }
 
 a.map-link {
@@ -165,4 +165,5 @@ a.map-link:hover {
     .header-nav ul li { margin: 0 15px; }
     .header-nav ul li a { font-size: 18px; }
 }
+
 
