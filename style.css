@@ -63,13 +63,13 @@ header {
 /* Logos links/rechts */
 .hero-logo {
     position: absolute;
-    top: 50%;
+    top: 40%;
     transform: translateY(-50%);
     width: 180px;
 }
 
-.hero-logo.left { left: 10px; }
-.hero-logo.right { right: 10px; }
+.hero-logo.left { left: 80px; }
+.hero-logo.right { right: 80px; }
 
 .hero-logo img {
     width: 100%;
@@ -126,4 +126,5 @@ a.map-link:hover {
     .header-nav ul li { margin: 0 15px; }
     .header-nav ul li a { font-size: 18px; }
 }
+
 
