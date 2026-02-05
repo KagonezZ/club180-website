@@ -68,8 +68,14 @@ header {
     width: 180px;
 }
 
-.hero-logo.left { left: 200px; }
-.hero-logo.right { right: 200px; }
+.hero-logo.left {
+    left: 200px;
+}
+
+.hero-logo.right {
+    right: 200px;
+    margin-right: -10px;
+}
 
 .hero-logo img {
     height: 240px;
@@ -126,6 +132,7 @@ a.map-link:hover {
     .header-nav ul li { margin: 0 15px; }
     .header-nav ul li a { font-size: 18px; }
 }
+
 
 
 
