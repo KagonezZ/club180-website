@@ -78,6 +78,7 @@ nav ul li a:hover {
     justify-content: space-between;
     flex-wrap: nowrap;
     width: 100%;
+    padding: 0 60px;
 }
 
 .hero-logo {
@@ -87,7 +88,7 @@ nav ul li a:hover {
 
 .hero-logo img {
     max-width: 100%;
-    height: 180px;
+    height: 200px;
 }
 
 .hero-text {
@@ -264,3 +265,4 @@ body {
     min-height: 100vh;
     background-color: #000 !important;
 }
+
