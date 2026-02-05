@@ -58,7 +58,6 @@ header {
     position: relative;
     background: 
         linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), /* dunkler Overlay */
-        url('assets/Dartscheibe.png') center/contain no-repeat,   /* Dartscheibe */
         url('assets/hero.jpg') center/cover no-repeat;           /* Original Hero-Bild */
 }
 
@@ -158,6 +157,7 @@ a.map-link:hover {
     .header-nav ul li { margin: 0 15px; }
     .header-nav ul li a { font-size: 18px; }
 }
+
 
 
 
