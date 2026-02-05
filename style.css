@@ -51,13 +51,15 @@ header {
 
 /* ===== HERO ===== */
 .hero {
-    height: calc(100vh - 82px); /* Header abziehen (30px oben + 30px unten + Border) */
+    height: calc(100vh - 82px); /* Header abziehen */
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-                url('assets/hero.jpg') center / cover no-repeat;
+    background: 
+        linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), /* dunkler Overlay */
+        url('assets/dartscheibe.png') center/contain no-repeat,   /* Dartscheibe */
+        url('assets/hero.jpg') center/cover no-repeat;           /* Original Hero-Bild */
 }
 
 /* Logos links/rechts */
@@ -142,6 +144,7 @@ a.map-link:hover {
     .header-nav ul li { margin: 0 15px; }
     .header-nav ul li a { font-size: 18px; }
 }
+
 
 
 
