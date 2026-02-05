@@ -1,0 +1,187 @@
+/* ===== GLOBAL ===== */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* kein Scrollen */
+    background-color: #000;
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+/* ===== HEADER ===== */
+header {
+    background-color: #000;
+    border-bottom: 4px solid #c40000;
+    width: 100%;
+    padding: 30px 0;
+    box-sizing: border-box;
+}
+
+/* ===== NAVIGATION ===== */
+.header-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header-nav ul li {
+    margin: 0 25px;
+}
+
+.header-nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 22px;
+    padding: 10px 0;
+}
+
+.header-nav ul li a:hover {
+    color: #c40000;
+}
+
+/* ===== HERO ===== */
+.hero {
+    height: calc(100vh - 82px); /* Header abziehen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: 
+        linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), /* dunkler Overlay */
+        url('assets/hero.jpg') center/cover no-repeat;           /* Original Hero-Bild */
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    width: 175%;      /* größer als Hero-Bereich */
+    height: 175%;     /* proportional vergrößert */
+    background: url('assets/Dartscheibe.png') center/contain no-repeat;
+    opacity: 0.2;       /* verblasst */
+    filter: grayscale(100%) brightness(60%);
+    transform: translate(-50%, -50%); /* zentriert */
+    z-index: 2;         /* vor Logos/ hinter Text */
+    pointer-events: none;
+}
+
+/* Logos links/rechts */
+.hero-logo {
+    position: absolute;
+    top: 35%;
+    transform: translateY(-50%);
+    width: 180px;
+    z-index: 1;
+}
+
+.hero-logo.left {
+    left: 200px;
+}
+
+.hero-logo.right {
+    right: 270px;
+}
+
+.hero-logo img {
+    height: 240px;
+    width: auto;
+}
+
+/* Hero Text mittig */
+.hero-text {
+    text-align: center;
+    color: #c40000;
+    z-index: 3;
+}
+
+.hero-text h1 {
+    font-size: 50px;
+    margin: 0;
+}
+
+.hero-text p {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+a.map-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a.map-link:hover {
+    color: #c40000;
+    text-decoration: underline;
+}
+
+.hero-copyright {
+    position: absolute;
+    bottom: 10px;       /* Abstand vom unteren Rand */
+    width: 100%;        /* zentriert über die ganze Breite */
+    text-align: center; /* Text zentrieren */
+    font-size: 12px;    /* klein */
+    color: #ffffff;     /* weiß */
+    opacity: 0.7;       /* leicht transparent, dezent */
+    z-index: 2;         /* über Hintergrund */
+}
+
+/* ===== ANIMATIONEN ===== */
+.fly-in-left { opacity: 0; animation: flyInLeft 1.2s ease-out forwards; }
+.fly-in-right { opacity: 0; animation: flyInRight 1.2s ease-out forwards; }
+.fly-in-bottom { opacity: 0; animation: flyInBottom 1s ease-out forwards; }
+
+@keyframes flyInLeft { 0% {opacity:0; transform:translateX(-150px);} 100% {opacity:1; transform:translateX(0);} }
+@keyframes flyInRight { 0% {opacity:0; transform:translateX(150px);} 100% {opacity:1; transform:translateX(0);} }
+@keyframes flyInBottom { 0% {opacity:0; transform:translateY(80px);} 100% {opacity:1; transform:translateY(0);} }
+
+/* ===== MOBILE ===== */
+@media (max-width: 900px) {
+    .hero-logo, .hero-text {
+        position: static;
+        transform: none;
+        width: 100%;
+        margin: 10px 0;
+    }
+    .hero-logo img { height: 120px; }
+    .hero-text h1 { font-size: 36px; white-space: normal; }
+    .header-nav ul li { margin: 0 15px; }
+    .header-nav ul li a { font-size: 18px; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
