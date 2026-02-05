@@ -162,11 +162,20 @@ footer a:hover {
     text-align: center;
 }
 
+.hero-text h1 {
+    font-size: 52px;
+    color: #c40000;
+    white-space: nowrap;
+}
+
 /* ===== Mobile ===== */
 @media (max-width: 900px) {
-    .hero-layout {
-        flex-direction: column;
+    .hero-text h1 {
+        white-space: normal;
+        font-size: 40px;
     }
+}
+
 
     .hero-logo,
     .hero-text {
@@ -238,3 +247,4 @@ footer,
 header {
     width: 100%;
 }
+
