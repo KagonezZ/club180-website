@@ -3,9 +3,11 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    overflow-x: hidden; /* kein horizontaler Scroll */
     background-color: #000 !important;
     font-family: 'Open Sans', sans-serif;
     color: #ffffff;
+    box-sizing: border-box;
 }
 
 /* ===== Container ===== */
@@ -13,7 +15,6 @@ html, body {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    background: transparent;
 }
 
 /* ===== Header ===== */
@@ -57,14 +58,13 @@ header {
 
 /* ===== HERO ===== */
 .hero {
-    height: 100vh; /* Vollbild, keine Scroll-Leiste */
-    padding: 0; /* Padding entfernt, um Scrollen zu vermeiden */
+    height: 100vh; /* Vollbild */
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
                 url('assets/hero.jpg') center / cover no-repeat;
-    box-sizing: border-box;
 }
 
 /* Hero Layout & Logos/Text */
@@ -73,8 +73,10 @@ header {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: 0 80px; /* Logos weiter außen */
+    max-width: 100%;
+    padding: 0 40px; /* Logos weiter außen, nicht zu groß */
     flex-wrap: nowrap;
+    box-sizing: border-box;
 }
 
 .hero-logo {
@@ -252,4 +254,3 @@ footer a:hover {
     .social-icons { flex-direction: column; gap: 15px; }
     .social-icon { width: 140px; text-align: center; }
 }
-
