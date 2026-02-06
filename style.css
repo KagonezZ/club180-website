@@ -134,7 +134,7 @@ a.map-link:hover {
 
 .hero-copyright {
     position: absolute;
-    bottom: 10px;       /* Abstand vom unteren Rand */
+    bottom: 40px;       /* Abstand vom unteren Rand */
     width: 100%;        /* zentriert über die ganze Breite */
     text-align: center; /* Text zentrieren */
     font-size: 12px;    /* klein */
@@ -232,3 +232,4 @@ a.map-link:hover {
         font-size: 16px;
     }
 }
+
