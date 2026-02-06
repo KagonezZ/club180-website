@@ -241,12 +241,9 @@ a.map-link:hover {
 
 .contact h1 {
     color: #c40000;
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    font-weight: 700;
-    font-family: 'Montserrat', sans-serif;
     font-size: 42px;
+    margin-bottom: 30px;
+    text-align: center;
 }
 
 .contact p {
@@ -371,3 +368,4 @@ a.map-link:hover {
     .membership h2 { font-size: 24px; }
     .price { font-size: 40px; }
 }
+
