@@ -236,11 +236,12 @@ a.map-link:hover {
 /* ===== Abstände für Überschriften im Content ===== */
 .content h1,
 .content h2 {
-    margin-top: 50px;   /* Abstand nach oben */
+    margin-top: 40px;   /* Abstand nach oben */
     margin-bottom: 15px;
 }
 
 .content p + h2,
 .content ul + h2 {
-    margin-top: 60px;   /* extra Abstand nach Text oder Liste */
+    margin-top: 50px;   /* extra Abstand nach Text oder Liste */
 }
+
