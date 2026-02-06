@@ -2,8 +2,9 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%;
-    overflow: hidden; /* kein Scrollen */
+    min-height: 100%;
+    overflow-x: hidden;   /* kein seitliches Scrollen */
+    overflow-y: auto;     /* vertikales Scrollen erlaubt */
     background-color: #000;
     font-family: 'Open Sans', sans-serif;
     color: #fff;
@@ -319,3 +320,4 @@ a.map-link:hover {
         font-size: 40px;
     }
 }
+
