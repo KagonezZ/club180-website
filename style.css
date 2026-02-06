@@ -243,7 +243,7 @@ a.map-link:hover {
 /* ===== Abstände für Überschriften im Content ===== */
 .content h1,
 .content h2 {
-    margin-top: 40px;   /* Abstand nach oben */
+    margin-top: 20px;   /* Abstand nach oben */
     margin-bottom: 15px;
 }
 
@@ -326,5 +326,6 @@ a.map-link:hover {
         font-size: 40px;
     }
 }
+
 
 
