@@ -50,5 +50,38 @@
 </div>
 </section>
 
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+
+    const form = e.target;
+    const formData = new FormData(form);
+    const messageDiv = document.getElementById('formMessage');
+
+    fetch('send-mail.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        messageDiv.innerHTML = data;
+        messageDiv.classList.add('show'); // fade-in
+
+        form.reset(); // Formular leeren
+
+        setTimeout(() => {
+            messageDiv.classList.remove('show'); // fade-out
+        }, 5000);
+    })
+    .catch(error => {
+        messageDiv.innerHTML = "<p style='color:#ff1a1a;'>Fehler beim Senden. Bitte versuchen Sie es später erneut.</p>";
+        messageDiv.classList.add('show');
+        setTimeout(() => {
+            messageDiv.classList.remove('show');
+        }, 5000);
+    });
+});
+</script>
+
 </body>
 </html>
