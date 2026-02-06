@@ -64,8 +64,8 @@ header {
     align-items: center;
     position: relative;
     background: 
-        linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), /* dunkler Overlay */
-        url('assets/hero.jpg') center/cover no-repeat;           /* Original Hero-Bild */
+        linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+        url('assets/hero.jpg') center/cover no-repeat;
 }
 
 .hero::before {
@@ -73,17 +73,17 @@ header {
     position: absolute;
     top: 65%;
     left: 50%;
-    width: 175%;      /* größer als Hero-Bereich */
-    height: 175%;     /* proportional vergrößert */
+    width: 175%;
+    height: 175%;
     background: url('assets/Dartscheibe.png') center/contain no-repeat;
-    opacity: 0.2;       /* verblasst */
+    opacity: 0.2;
     filter: grayscale(100%) brightness(60%);
-    transform: translate(-50%, -50%); /* zentriert */
-    z-index: 2;         /* vor Logos/ hinter Text */
+    transform: translate(-50%, -50%);
+    z-index: 2; /* vor Logos / hinter Text */
     pointer-events: none;
 }
 
-/* Logos links/rechts */
+/* ===== HERO LOGOS ===== */
 .hero-logo {
     position: absolute;
     top: 35%;
@@ -92,20 +92,15 @@ header {
     z-index: 1;
 }
 
-.hero-logo.left {
-    left: 200px;
-}
-
-.hero-logo.right {
-    right: 270px;
-}
+.hero-logo.left { left: 200px; }
+.hero-logo.right { right: 270px; }
 
 .hero-logo img {
     height: 240px;
     width: auto;
 }
 
-/* Hero Text mittig */
+/* ===== HERO TEXT ===== */
 .hero-text {
     text-align: center;
     color: #c40000;
@@ -117,7 +112,7 @@ header {
     margin: 0;
     opacity: 0;
     animation: flyInBottom 1s ease-out forwards;
-    animation-delay: 0.1s; /* ⬅️ WICHTIG: nach den Logos */
+    animation-delay: 0.1s;
 }
 
 .hero-text p {
@@ -141,133 +136,35 @@ a.map-link:hover {
 
 .hero-copyright {
     position: absolute;
-    bottom: 40px;       /* Abstand vom unteren Rand */
-    width: 100%;        /* zentriert über die ganze Breite */
-    text-align: center; /* Text zentrieren */
-    font-size: 12px;    /* klein */
-    color: #ffffff;     /* weiß */
-    opacity: 0.7;       /* leicht transparent, dezent */
-    z-index: 2;         /* über Hintergrund */
+    bottom: 40px;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    color: #ffffff;
+    opacity: 0.7;
+    z-index: 2;
 }
 
-/* ===== ANIMATIONEN ===== */
-.fly-in-left { opacity: 0; animation: flyInLeft 1.2s ease-out forwards; }
-.fly-in-right { opacity: 0; animation: flyInRight 1.2s ease-out forwards; }
-.fly-in-bottom { opacity: 0; animation: flyInBottom 1s ease-out forwards; }
-
-@keyframes flyInLeft { 0% {opacity:0; transform:translateX(-150px);} 100% {opacity:1; transform:translateX(0);} }
-@keyframes flyInRight { 0% {opacity:0; transform:translateX(150px);} 100% {opacity:1; transform:translateX(0);} }
-@keyframes flyInBottom { 0% {opacity:0; transform:translateY(80px);} 100% {opacity:1; transform:translateY(0);} }
-
-/* ===== MOBILE ===== */
-@media (max-width: 900px) {
-
-    /* ✅ Mobile darf scrollen */
-    html, body {
-        height: auto;
-        min-height: 100%;
-        overflow-x: hidden;
-        overflow-y: auto;
-        background-color: #000;
-    }
-
-    header {
-        width: 100%;
-        position: relative;
-    }
-
-    /* ❗ KEIN vh auf Mobile */
-    .hero {
-        height: auto;
-        min-height: 100svh;   /* 🔥 WICHTIG: mobiles Viewport-Unit */
-        padding: 40px 0 80px;
-        background-size: cover;
-    }
-
-    .hero::before {
-        width: 240%;
-        height: 240%;
-        top: 55%;
-    }
-
-    .hero-logo {
-        position: static;
-        transform: none;
-        width: 100%;
-        text-align: center;
-        margin: 15px 0;
-    }
-
-    .hero-logo img {
-        height: 120px;
-    }
-
-    .hero-text {
-        position: static;
-        transform: none;
-        width: 100%;
-        margin: 20px 0;
-        text-align: center;
-    }
-
-    .hero-text h1 {
-        font-size: 32px;
-        white-space: normal;
-    }
-
-    .hero-text p {
-        font-size: 17px;
-    }
-
-    .hero-copyright {
-        position: relative;
-        bottom: auto;
-        margin-top: 30px;
-        text-align: center;
-    }
-
-    .header-nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .header-nav ul li {
-        margin: 6px 12px;
-    }
-
-    .header-nav ul li a {
-        font-size: 16px;
-    }
-}
-
-/* ===== CONTENT: Mitgliedschaft ===== */
+/* ===== CONTENT / ALLGEMEIN ===== */
 .content {
-    padding-top: 20px;    /* Abstand oben reduzieren, alles rückt nach oben */
-    padding-bottom: 60px; /* Platz unten beibehalten */
+    padding-top: 20px;    
+    padding-bottom: 60px;
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Abstände für Überschriften */
 .content h1,
 .content h2 {
-    margin-top: 20px;   /* Abstand nach oben */
-    margin-bottom: 15px; /* Abstand nach unten */
+    margin-top: 20px;
+    margin-bottom: 15px;
 }
 
-/* Erste Überschrift direkt nach roter Linie etwas dichter */
-.content h1:first-child {
-    margin-top: 0;
-}
+.content h1:first-child { margin-top: 0; }
 
-/* Zusätzlicher Abstand, wenn Überschrift nach Absatz oder Liste kommt */
 .content p + h2,
-.content ul + h2 {
-    margin-top: 50px;
-}
+.content ul + h2 { margin-top: 50px; }
 
-/* Textabsätze */
 .content p {
     margin: 10px 0;
     line-height: 1.6;
@@ -275,7 +172,7 @@ a.map-link:hover {
     color: #fff;
 }
 
-/* ===== Mitgliedschaft ===== */
+/* ===== MITGLIEDSCHAFT ===== */
 .membership {
     max-width: 900px;
     margin: 0 auto;
@@ -301,7 +198,6 @@ a.map-link:hover {
     line-height: 1.6;
 }
 
-/* Preisbox */
 .price-box {
     margin: 30px auto;
     padding: 25px 40px;
@@ -323,7 +219,6 @@ a.map-link:hover {
     opacity: 0.8;
 }
 
-/* Vorteile */
 .benefits {
     list-style: none;
     padding: 0;
@@ -335,7 +230,7 @@ a.map-link:hover {
     margin-bottom: 12px;
 }
 
-/* ===== Kontaktbereich ===== */
+/* ===== KONTAKT ===== */
 .contact {
     padding: 60px 0;
     width: 90%;
@@ -346,32 +241,12 @@ a.map-link:hover {
 
 .contact h1 {
     color: #c40000;
-    margin-bottom: 20px;
-}
-
-.contact p {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #fff;
-    margin-bottom: 30px;
-}
-
-/* ===== Kontaktbereich ===== */
-.contact .container {
-    width: 90%;
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: center;  /* Alles mittig */
-}
-
-.contact h1 {
-    color: #c40000;           /* Rot wie Mitgliedschaft */
-    text-align: center;       /* Überschrift mittig */
+    text-align: center;
     margin-top: 30px;
     margin-bottom: 20px;
     font-weight: 700;
     font-family: 'Montserrat', sans-serif;
-    font-size: 42px;          /* Gleiche Größe wie Mitgliedschaft */
+    font-size: 42px;
 }
 
 .contact p {
@@ -381,7 +256,6 @@ a.map-link:hover {
     margin-bottom: 30px;
 }
 
-/* Social Media Icons */
 .social-icons {
     display: flex;
     justify-content: center;
@@ -403,51 +277,6 @@ a.map-link:hover {
     background-color: #ff1a1a;
 }
 
-/* Kontaktformular */
-.contact-form form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.contact-form input,
-.contact-form textarea {
-    padding: 12px;
-    border-radius: 5px;
-    border: 2px solid #c40000;
-    background-color: #111;
-    color: #fff;
-    font-size: 16px;
-    resize: none;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    outline: none;
-    border-color: #ff1a1a;
-}
-
-/* Button */
-.contact-form .button {
-    align-self: center;
-    padding: 12px 30px;
-}
-
-/* Mobile Anpassung */
-@media (max-width: 900px) {
-    .social-icons {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-        width: 100%;
-    }
-}
-
-
-/* Kontaktformular */
 .contact-form form {
     display: flex;
     flex-direction: column;
@@ -472,66 +301,73 @@ a.map-link:hover {
     border-color: #ff1a1a;
 }
 
-/* Button */
 .contact-form .button {
     align-self: center;
     padding: 12px 30px;
 }
 
-/* Social Media Icons */
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 30px;
-}
+/* ===== ANIMATIONEN ===== */
+.fly-in-left { opacity: 0; animation: flyInLeft 1.2s ease-out forwards; }
+.fly-in-right { opacity: 0; animation: flyInRight 1.2s ease-out forwards; }
+.fly-in-bottom { opacity: 0; animation: flyInBottom 1s ease-out forwards; }
 
-.social-icon {
-    background-color: #c40000;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-}
+@keyframes flyInLeft { 0% {opacity:0; transform:translateX(-150px);} 100% {opacity:1; transform:translateX(0);} }
+@keyframes flyInRight { 0% {opacity:0; transform:translateX(150px);} 100% {opacity:1; transform:translateX(0);} }
+@keyframes flyInBottom { 0% {opacity:0; transform:translateY(80px);} 100% {opacity:1; transform:translateY(0);} }
 
-.social-icon:hover {
-    background-color: #ff1a1a;
-}
-
-/* Mobile Anpassung */
+/* ===== MOBILE ===== */
 @media (max-width: 900px) {
-    .social-icons {
-        flex-direction: column;
-        gap: 15px;
+    html, body {
+        height: auto;
+        min-height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: #000;
     }
 
-    .contact-form input,
-    .contact-form textarea {
+    header { position: relative; width: 100%; }
+
+    .hero {
+        height: auto;
+        min-height: 100svh;
+        padding: 40px 0 80px;
+        background-size: cover;
+    }
+
+    .hero::before {
+        width: 240%;
+        height: 240%;
+        top: 55%;
+    }
+
+    .hero-logo, .hero-text {
+        position: static;
+        transform: none;
         width: 100%;
+        margin: 10px 0;
+        text-align: center;
     }
+
+    .hero-logo img { height: 120px; }
+    .hero-text h1 { font-size: 32px; white-space: normal; }
+    .hero-text p { font-size: 17px; }
+
+    .hero-copyright {
+        position: relative;
+        bottom: auto;
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    .header-nav ul { flex-wrap: wrap; justify-content: center; }
+    .header-nav ul li { margin: 6px 12px; }
+    .header-nav ul li a { font-size: 16px; }
+
+    .social-icons { flex-direction: column; gap: 15px; }
+    .contact-form input,
+    .contact-form textarea { width: 100%; }
+
+    .membership h1 { font-size: 34px; }
+    .membership h2 { font-size: 24px; }
+    .price { font-size: 40px; }
 }
-
-/* Mobile */
-@media (max-width: 900px) {
-    .membership h1 {
-        font-size: 34px;
-    }
-
-    .membership h2 {
-        font-size: 24px;
-    }
-
-    .price {
-        font-size: 40px;
-    }
-}
-
-
-
-
-
-
-
-
