@@ -11,6 +11,12 @@ html, body {
     box-sizing: border-box;
 }
 
+/* ===== Startseite: kein Scrollen ===== */
+.no-scroll {
+    overflow: hidden;
+    height: 100vh;
+}
+
 /* ===== HEADER ===== */
 header {
     background-color: #000;
@@ -320,4 +326,5 @@ a.map-link:hover {
         font-size: 40px;
     }
 }
+
 
