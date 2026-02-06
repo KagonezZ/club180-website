@@ -371,4 +371,13 @@ a.map-link:hover {
     .price { font-size: 40px; }
 }
 
+.fade-message {
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    font-size: 16px;
+    text-align: center;
+}
 
+.fade-message.show {
+    opacity: 1;
+}
