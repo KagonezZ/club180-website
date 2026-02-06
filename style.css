@@ -174,9 +174,11 @@ a.map-link:hover {
 
 /* ===== MITGLIEDSCHAFT ===== */
 .membership {
+    padding: 60px 0;
+    width: 90%;
     max-width: 900px;
     margin: 0 auto;
-    padding: 80px 20px 100px;
+    text-align: center;
 }
 
 .membership h1 {
@@ -368,4 +370,5 @@ a.map-link:hover {
     .membership h2 { font-size: 24px; }
     .price { font-size: 40px; }
 }
+
 
