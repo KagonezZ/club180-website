@@ -240,16 +240,39 @@ a.map-link:hover {
     }
 }
 
-/* ===== Abstände für Überschriften im Content ===== */
+/* ===== CONTENT: Mitgliedschaft ===== */
+.content {
+    padding-top: 20px;    /* Abstand oben reduzieren, alles rückt nach oben */
+    padding-bottom: 60px; /* Platz unten beibehalten */
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Abstände für Überschriften */
 .content h1,
 .content h2 {
     margin-top: 20px;   /* Abstand nach oben */
-    margin-bottom: 15px;
+    margin-bottom: 15px; /* Abstand nach unten */
 }
 
+/* Erste Überschrift direkt nach roter Linie etwas dichter */
+.content h1:first-child {
+    margin-top: 0;
+}
+
+/* Zusätzlicher Abstand, wenn Überschrift nach Absatz oder Liste kommt */
 .content p + h2,
 .content ul + h2 {
-    margin-top: 50px;   /* extra Abstand nach Text oder Liste */
+    margin-top: 50px;
+}
+
+/* Textabsätze */
+.content p {
+    margin: 10px 0;
+    line-height: 1.6;
+    font-size: 18px;
+    color: #fff;
 }
 
 /* ===== Mitgliedschaft ===== */
@@ -326,6 +349,7 @@ a.map-link:hover {
         font-size: 40px;
     }
 }
+
 
 
 
