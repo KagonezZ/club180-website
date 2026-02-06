@@ -39,18 +39,32 @@
         </div>
 
         <!-- Kontaktformular -->
-<div class="contact-form">
-    <form action="https://formsubmit.co/mkag999@gmail.com" method="POST" target="_blank">
-        <input type="text" name="name" placeholder="Dein Name" required>
-        <input type="email" name="email" placeholder="Deine E-Mail" required>
-        <textarea name="message" placeholder="Deine Nachricht" rows="5" required></textarea>
-        <button type="submit" class="button">Senden</button>
+<form id="contact-form">
+  <input type="text" name="name" placeholder="Name" required>
+  <input type="email" name="email" placeholder="E-Mail" required>
+  <textarea name="message" placeholder="Nachricht" required></textarea>
+  <button type="submit">Senden</button>
+</form>
 
-        <!-- Optional: Erfolgs- oder Dankeseite -->
-        <input type="hidden" name="_next" value="https://deine-website.at/danke.html">
-        <input type="hidden" name="_captcha" value="false">
-    </form>
+<div id="success-msg" style="display:none;color:#c40000;margin-top:10px;">
+  Vielen Dank! Ihre Nachricht wurde gesendet.
 </div>
+
+<script>
+const form = document.getElementById('contact-form');
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+  fetch("https://formsubmit.co/ajax/dein@email.com", {
+    method: "POST",
+    body: new FormData(form)
+  }).then(response => response.json())
+    .then(data => {
+      form.reset();
+      document.getElementById('success-msg').style.display = 'block';
+    }).catch(err => alert("Fehler beim Senden."));
+});
+</script>
+
 </section>
 
 </body>
