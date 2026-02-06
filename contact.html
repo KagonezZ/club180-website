@@ -40,20 +40,37 @@
 
         <!-- Kontaktformular -->
 <div class="contact-form">
-    <form action="https://formsubmit.co/mkag999@gmail.com" method="POST" target="_blank">
+    <form id="contact-form">
         <input type="text" name="name" placeholder="Dein Name" required>
         <input type="email" name="email" placeholder="Deine E-Mail" required>
         <textarea name="message" placeholder="Deine Nachricht" rows="5" required></textarea>
         <button type="submit" class="button">Senden</button>
-
-  <!-- damit Formsubmit nicht weiterleitet -->
-  <input type="hidden" name="_next" value="https://kagonezz.github.io/club180-website/contact.html">
-  <input type="hidden" name="_captcha" value="false">
-</form>
-
     </form>
+
+    <div id="success-msg" style="display:none;color:#c40000;margin-top:15px;font-weight:bold;">
+        Vielen Dank! Deine Nachricht wurde gesendet.
+    </div>
 </div>
+
 </section>
 
+<script>
+const form = document.getElementById('contact-form');
+
+form.addEventListener('submit', function(e){
+    e.preventDefault(); // verhindert Standard-Submit
+
+    fetch("https://formsubmit.co/ajax/mkag999@gmail.com", {
+        method: "POST",
+        body: new FormData(form)
+    })
+    .then(response => response.json())
+    .then(data => {
+        form.reset(); // Formular zurücksetzen
+        document.getElementById('success-msg').style.display = 'block'; // Erfolgsmeldung anzeigen
+    })
+    .catch(err => alert("Fehler beim Senden. Bitte versuche es erneut."));
+});
+</script>  
 </body>
 </html>
