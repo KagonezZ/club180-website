@@ -245,3 +245,77 @@ a.map-link:hover {
     margin-top: 50px;   /* extra Abstand nach Text oder Liste */
 }
 
+/* ===== Mitgliedschaft ===== */
+.membership {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 20px 100px;
+}
+
+.membership h1 {
+    color: #c40000;
+    font-size: 42px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.membership h2 {
+    color: #c40000;
+    font-size: 28px;
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
+.membership p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Preisbox */
+.price-box {
+    margin: 30px auto;
+    padding: 25px 40px;
+    border: 2px solid #c40000;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.price {
+    font-size: 48px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.price-info {
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+/* Vorteile */
+.benefits {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.benefits li {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+    .membership h1 {
+        font-size: 34px;
+    }
+
+    .membership h2 {
+        font-size: 24px;
+    }
+
+    .price {
+        font-size: 40px;
+    }
+}
