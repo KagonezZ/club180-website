@@ -40,48 +40,18 @@
 
         <!-- Kontaktformular -->
 <div class="contact-form">
-    <form id="contactForm">
-        <input type="text" name="name" placeholder="Name" required>
-        <input type="email" name="email" placeholder="E-Mail" required>
-        <textarea name="message" placeholder="Nachricht" rows="5" required></textarea>
+    <form action="https://formsubmit.co/dein.obmann@email.at" method="POST" target="_blank">
+        <input type="text" name="name" placeholder="Dein Name" required>
+        <input type="email" name="email" placeholder="Deine E-Mail" required>
+        <textarea name="message" placeholder="Deine Nachricht" rows="5" required></textarea>
         <button type="submit" class="button">Senden</button>
+
+        <!-- Optional: Erfolgs- oder Dankeseite -->
+        <input type="hidden" name="_next" value="https://deine-website.at/danke.html">
+        <input type="hidden" name="_captcha" value="false">
     </form>
-    <div id="formMessage" class="fade-message"></div>
 </div>
 </section>
-
-<script>
-document.getElementById('contactForm').addEventListener('submit', function(e){
-    e.preventDefault();
-
-    const form = e.target;
-    const formData = new FormData(form);
-    const messageDiv = document.getElementById('formMessage');
-
-    fetch('send-mail.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.text())
-    .then(data => {
-        messageDiv.innerHTML = data;
-        messageDiv.classList.add('show'); // fade-in
-
-        form.reset(); // Formular leeren
-
-        setTimeout(() => {
-            messageDiv.classList.remove('show'); // fade-out
-        }, 5000);
-    })
-    .catch(error => {
-        messageDiv.innerHTML = "<p style='color:#ff1a1a;'>Fehler beim Senden. Bitte versuchen Sie es später erneut.</p>";
-        messageDiv.classList.add('show');
-        setTimeout(() => {
-            messageDiv.classList.remove('show');
-        }, 5000);
-    });
-});
-</script>
 
 </body>
 </html>
