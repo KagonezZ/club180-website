@@ -152,3 +152,8 @@ header {
     .price { font-size: 40px; }
 }
 
+.no-scroll {
+    overflow: hidden;
+    height: 100vh; /* ganze Höhe des Viewports */
+}
+
