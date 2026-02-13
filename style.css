@@ -381,3 +381,47 @@ a.map-link:hover {
 .fade-message.show {
     opacity: 1;
 }
+
+/* ===== Termine Bereich ===== */
+
+.termine .intro-text {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.termine-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.termin-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-left: 4px solid #c40000;
+    border-radius: 6px;
+}
+
+.termin-date {
+    font-weight: bold;
+    color: #c40000;
+    min-width: 150px;
+}
+
+.termin-info h2 {
+    margin: 0 0 5px 0;
+}
+
+@media (max-width: 768px) {
+    .termin-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .termin-date {
+        margin-bottom: 10px;
+    }
+}
