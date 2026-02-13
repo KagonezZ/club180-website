@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontakt – Club 180</title>
-    <meta name="description" content="Kontakt zum Club 180 in Wiener Neudorf. Schreibe uns eine Nachricht oder folge uns auf Social Media.">
-
+    <title>Club 180 - Kontakt</title>
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- Header / Navigation -->
 <header>
     <nav class="header-nav">
         <ul>
@@ -25,45 +26,51 @@
     </nav>
 </header>
 
-<main class="content contact">
-    <h1>Kontakt</h1>
-    <p>Wir freuen uns auf eure Nachrichten! Nutze das Formular oder kontaktiere uns über unsere Social Media Kanäle.</p>
+<!-- Kontaktbereich -->
+<section class="content contact">
+    <div class="container">
+        <h1>Kontakt</h1>  <!-- Rote, mittige Überschrift -->
+        <p>Wir freuen uns auf eure Nachrichten! Nutze das Formular oder kontaktiere uns über unsere Social Media Kanäle.</p>
 
-    <div class="social-icons">
-        <a class="social-icon" href="https://www.facebook.com/triplezwanzig/?locale=de_DE" target="_blank" rel="noopener noreferrer">Facebook</a>
-        <a class="social-icon" href="https://www.instagram.com/dart.club180/" target="_blank" rel="noopener noreferrer">Instagram</a>
-    </div>
+        <!-- Social Media -->
+        <div class="social-icons">
+            <a class="social-icon" href="https://www.facebook.com/triplezwanzig/?locale=de_DE" target="_blank">Facebook</a>
+            <a class="social-icon" href="https://www.instagram.com/dart.club180/" target="_blank">Instagram</a>
+        </div>
 
-    <div class="contact-form">
-        <form id="contact-form">
-            <input type="text" name="name" placeholder="Dein Name" required>
-            <input type="email" name="email" placeholder="Deine E-Mail" required>
-            <textarea name="message" placeholder="Deine Nachricht" rows="5" required></textarea>
-            <button type="submit" class="button">Senden</button>
-            <input type="text" name="_honey" style="display:none"> <!-- Honeypot gegen Spam -->
-        </form>
-        <p class="privacy-note">Mit dem Absenden erklärst du dich mit der Verarbeitung deiner Daten gemäß unserer Datenschutzerklärung einverstanden.</p>
-        <div id="success-msg" class="fade-message">Vielen Dank! Deine Nachricht wurde gesendet.</div>
+        <!-- Kontaktformular -->
+<div class="contact-form">
+    <form id="contact-form">
+        <input type="text" name="name" placeholder="Dein Name" required>
+        <input type="email" name="email" placeholder="Deine E-Mail" required>
+        <textarea name="message" placeholder="Deine Nachricht" rows="5" required></textarea>
+        <button type="submit" class="button">Senden</button>
+    </form>
+
+    <div id="success-msg" style="display:none;color:#c40000;margin-top:15px;font-weight:bold;">
+        Vielen Dank! Deine Nachricht wurde gesendet.
     </div>
-</main>
+</div>
+
+</section>
 
 <script>
 const form = document.getElementById('contact-form');
+
 form.addEventListener('submit', function(e){
-    e.preventDefault();
-    if(form._honey.value !== "") return; // Spam Honeypot
+    e.preventDefault(); // verhindert Standard-Submit
+
     fetch("https://formsubmit.co/ajax/mkag999@gmail.com", {
         method: "POST",
         body: new FormData(form)
     })
-    .then(res => res.json())
-    .then(() => {
-        form.reset();
-        document.getElementById('success-msg').classList.add('show');
+    .then(response => response.json())
+    .then(data => {
+        form.reset(); // Formular zurücksetzen
+        document.getElementById('success-msg').style.display = 'block'; // Erfolgsmeldung anzeigen
     })
-    .catch(() => alert("Fehler beim Senden. Bitte versuche es erneut."));
+    .catch(err => alert("Fehler beim Senden. Bitte versuche es erneut."));
 });
-</script>
-
+</script>  
 </body>
 </html>
