@@ -1,3 +1,5 @@
+Bitte wieder bereinigen. Bestimmt wieder etwas doppelt... Die "event" Sachen wo man draufklicken kann sollen wieder wie vorher sein.
+
 /* ===== GLOBAL ===== */
 html, body {
     margin: 0;
@@ -414,13 +416,13 @@ header {
 /* ===== EVENTS ===== */
 .event-card {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: flex-start;
-    gap: 25px; /* Abstand zwischen Icon und Info */
     background-color: #111;
     border: 2px solid #c40000;
-    padding: 15px 25px;
+    padding: 20px 25px;
     border-radius: 8px;
+    text-align: left;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -499,6 +501,18 @@ header {
     }
 }
 
+.event-card {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 25px; /* Abstand zwischen Icon und Info */
+    background-color: #111;
+    border: 2px solid #c40000;
+    padding: 15px 25px;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
 .event-card .event-icon {
     font-size: 32px;
     width: 50px; /* gleichmäßige Breite */
@@ -509,4 +523,11 @@ header {
     flex: 1; /* Info nimmt den restlichen Platz ein */
 }
 
-
+.event-card .event-tag {
+    background-color: #c40000;
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    white-space: nowrap;
+}
