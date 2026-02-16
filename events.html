@@ -68,7 +68,7 @@
         <h2>Freies Training</h2>
         <p>Jeden Dienstag & Freitag – 18:00 Uhr</p>
         <p>Club 180, Wiener Neudorf</p>
-        <!-- Kein Countdown nötig -->
+        <div class="event-countdown" data-weekdays="2,5" data-time="18:00:00"></div>
     </div>
     <div class="event-tag">Training</div>
 </div>
@@ -81,28 +81,73 @@
 const container = document.querySelector('.events-list');
 const eventCards = Array.from(container.querySelectorAll('.event-card'));
 
-// Sortiere nur Karten mit Countdown
-const cardsWithDate = eventCards.filter(card => card.querySelector('.event-countdown'));
+// Funktion: nächstes Datum für wiederkehrende Wochentage
+function getNextWeekdayDate(weekdays, time){
+    const now = new Date();
+    const today = now.getDay() || 7; // Sonntag=7
+    weekdays.sort((a,b)=>a-b);
+    for(const day of weekdays){
+        let diff = day - today;
+        if(diff < 0) diff += 7;
+        const nextDate = new Date(now);
+        nextDate.setDate(now.getDate() + diff);
+        const [h, m, s] = time.split(':').map(Number);
+        nextDate.setHours(h, m, s, 0);
+        if(nextDate > now) return nextDate;
+    }
+    // Fallback: nächster Zyklus
+    const nextDate = new Date(now);
+    const [h, m, s] = time.split(':').map(Number);
+    nextDate.setDate(now.getDate() + 7 - today + weekdays[0]);
+    nextDate.setHours(h, m, s, 0);
+    return nextDate;
+}
 
-cardsWithDate.sort((a, b) => {
-    const dateA = new Date(a.querySelector('.event-countdown').dataset.date);
-    const dateB = new Date(b.querySelector('.event-countdown').dataset.date);
+// Berechne Datum für jede Karte
+eventCards.forEach(card => {
+    const countdownEl = card.querySelector('.event-countdown');
+    let eventDate = null;
+
+    if(countdownEl){
+        const dateAttr = countdownEl.dataset.date;
+        const weekdaysAttr = countdownEl.dataset.weekdays;
+        const timeAttr = countdownEl.dataset.time || "18:00:00";
+
+        if(dateAttr){
+            eventDate = new Date(dateAttr);
+        } else if(weekdaysAttr){
+            const weekdays = weekdaysAttr.split(',').map(Number);
+            eventDate = getNextWeekdayDate(weekdays, timeAttr);
+        }
+
+        countdownEl.dataset.computedDate = eventDate.toISOString();
+    }
+});
+
+// Sortiere alle Karten nach computedDate
+const cardsWithDate = eventCards.filter(card => {
+    return card.querySelector('.event-countdown') && card.querySelector('.event-countdown').dataset.computedDate;
+});
+
+cardsWithDate.sort((a,b) => {
+    const dateA = new Date(a.querySelector('.event-countdown').dataset.computedDate);
+    const dateB = new Date(b.querySelector('.event-countdown').dataset.computedDate);
     return dateA - dateB;
 });
 
 // Karten ohne Datum bleiben am Ende
-const cardsWithoutDate = eventCards.filter(card => !card.querySelector('.event-countdown'));
+const cardsWithoutDate = eventCards.filter(card => !card.querySelector('.event-countdown') || !card.querySelector('.event-countdown').dataset.computedDate);
 
-// Container leeren und sortierte Karten wieder einfügen
+// Container neu einfügen
 container.innerHTML = '';
 cardsWithDate.forEach(card => container.appendChild(card));
 cardsWithoutDate.forEach(card => container.appendChild(card));
 
-// Countdown berechnen
+// Countdown anzeigen
 const now = new Date();
 cardsWithDate.forEach(card => {
     const countdownEl = card.querySelector('.event-countdown');
-    const eventDate = new Date(countdownEl.dataset.date);
+    const eventDate = new Date(countdownEl.dataset.computedDate);
     const diff = eventDate - now;
     const days = Math.max(Math.ceil(diff / (1000*60*60*24)), 0);
     countdownEl.textContent = `Noch ${days} Tage`;
