@@ -63,14 +63,16 @@
     </a>
 </div>
 
-    <div class="event-card">
-        <div class="event-info">
-            <h2>Freies Training</h2>
-            <p>Jeden Dienstag & Freitag – 18:00 Uhr</p>
-            <p>Club 180, Wiener Neudorf</p>
-        </div>
-        <div class="event-tag">Training</div>
+<div class="event-card">
+    <div class="event-info">
+        <h2>Freies Training</h2>
+        <p>Jeden Dienstag & Freitag – 18:00 Uhr</p>
+        <p>Club 180, Wiener Neudorf</p>
+        <!-- Kein Countdown nötig -->
     </div>
+    <div class="event-tag">Training</div>
+</div>
+
 
 </div>
 
@@ -79,27 +81,31 @@
 const container = document.querySelector('.events-list');
 const eventCards = Array.from(container.querySelectorAll('.event-card'));
 
-// Sortiere nach Datum (nächster Termin zuerst)
-eventCards.sort((a, b) => {
+// Sortiere nur Karten mit Countdown
+const cardsWithDate = eventCards.filter(card => card.querySelector('.event-countdown'));
+
+cardsWithDate.sort((a, b) => {
     const dateA = new Date(a.querySelector('.event-countdown').dataset.date);
     const dateB = new Date(b.querySelector('.event-countdown').dataset.date);
     return dateA - dateB;
 });
 
+// Karten ohne Datum bleiben am Ende
+const cardsWithoutDate = eventCards.filter(card => !card.querySelector('.event-countdown'));
+
 // Container leeren und sortierte Karten wieder einfügen
 container.innerHTML = '';
-eventCards.forEach(card => container.appendChild(card));
+cardsWithDate.forEach(card => container.appendChild(card));
+cardsWithoutDate.forEach(card => container.appendChild(card));
 
 // Countdown berechnen
 const now = new Date();
-eventCards.forEach(card => {
+cardsWithDate.forEach(card => {
     const countdownEl = card.querySelector('.event-countdown');
-    if(countdownEl){
-        const eventDate = new Date(countdownEl.dataset.date);
-        const diff = eventDate - now;
-        const days = Math.max(Math.ceil(diff / (1000*60*60*24)), 0);
-        countdownEl.textContent = `Noch ${days} Tage`;
-    }
+    const eventDate = new Date(countdownEl.dataset.date);
+    const diff = eventDate - now;
+    const days = Math.max(Math.ceil(diff / (1000*60*60*24)), 0);
+    countdownEl.textContent = `Noch ${days} Tage`;
 });
 </script>
 
