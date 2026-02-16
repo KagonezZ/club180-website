@@ -449,6 +449,7 @@ header {
 .event-card .event-info {
     flex: 1;             /* Info nimmt den restlichen Platz ein */
     text-align: left;  /* Text linksbündig neben Icon */
+    margin-left: 25px;   /* Abstand zwischen Icon und Text */
 }
 
 .event-info h2 {
@@ -502,4 +503,5 @@ header {
         align-self: flex-start;
     }
 }
+
 
