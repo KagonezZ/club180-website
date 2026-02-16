@@ -442,6 +442,27 @@ header {
     font-weight: bold;
 }
 
+/* ===== EVENTS HIGHLIGHT ===== */
+.event-card.highlight {
+    border-color: #ff1a1a;
+    background-color: #1a1a1a;
+    box-shadow: 0 0 20px rgba(196, 0, 0, 0.6);
+    transform: scale(1.02);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.event-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(196, 0, 0, 0.5);
+}
+
+.event-countdown {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #ff1a1a;
+    font-weight: bold;
+}
+
 /* ===== MOBILE EVENTS ===== */
 @media (max-width: 900px) {
 
@@ -455,4 +476,5 @@ header {
         align-self: flex-start;
     }
 }
+
 
