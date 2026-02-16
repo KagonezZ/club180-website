@@ -468,7 +468,7 @@ header {
     background-color: #c40000;
     color: #fff;
     padding: 8px 16px;   /* etwas größer als vorher */
-    border-radius: 12px; /* abgerundete Ecken */
+    border-radius: 20px; /* abgerundete Ecken */
     font-weight: bold;
     font-size: 16px;     /* größere Schrift */
     white-space: nowrap;
@@ -503,9 +503,3 @@ header {
         align-self: flex-start;
     }
 }
-
-
-
-
-
-
