@@ -46,10 +46,11 @@ header {
 
 .header-nav ul li a {
     text-decoration: none;
-    color: #fff;
+    color: #ffffff; /* explizit reinweiß */
     font-weight: bold;
     font-size: 22px;
     padding: 10px 0;
+    opacity: 1;              /* wichtig */
 }
 
 .header-nav ul li a:hover {
@@ -379,3 +380,4 @@ header {
     .membership h2 { font-size: 24px; }
     .price { font-size: 40px; }
 }
+
