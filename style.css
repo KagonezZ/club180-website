@@ -422,6 +422,18 @@ header {
     text-align: left;
 }
 
+.event-card a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+.event-card a:hover .event-tag {
+    background-color: #ff1a1a;
+}
+
 .event-info h2 {
     margin: 0 0 8px 0;
     font-size: 20px;
@@ -476,5 +488,6 @@ header {
         align-self: flex-start;
     }
 }
+
 
 
