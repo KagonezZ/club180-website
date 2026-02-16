@@ -434,6 +434,7 @@ header {
     width: 100%;
     text-decoration: none;
     color: inherit;
+    gap: 0; /* nicht zusätzlich */
 }
 
 .event-card a:hover .event-tag {
@@ -444,11 +445,13 @@ header {
     font-size: 32px;
     width: 50px; /* gleichmäßige Breite für alle Icons */
     text-align: center;
+    flex-shrink: 0; /* verhindert, dass Icon schrumpft */
 }
 
 .event-card .event-info {
     flex: 1;             /* Info nimmt den restlichen Platz ein */
     text-align: left;  /* Text linksbündig neben Icon */
+    margin: 0; /* Abstand übernimmt gap */
 }
 
 .event-info h2 {
@@ -502,5 +505,3 @@ header {
         align-self: flex-start;
     }
 }
-
-
