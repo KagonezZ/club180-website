@@ -24,6 +24,8 @@ header {
     width: 100%;
     padding: 30px 0;
     box-sizing: border-box;
+    position: relative;
+    z-index: 1000;
 }
 
 /* ===== NAVIGATION ===== */
@@ -380,4 +382,5 @@ header {
     .membership h2 { font-size: 24px; }
     .price { font-size: 40px; }
 }
+
 
