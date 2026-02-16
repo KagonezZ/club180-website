@@ -383,4 +383,71 @@ header {
     .price { font-size: 40px; }
 }
 
+/* ===== EVENTS ===== */
+.events {
+    padding: 60px 0;
+    max-width: 900px;
+    text-align: center;
+}
 
+.events h1 {
+    color: #c40000;
+    font-size: 42px;
+    margin-bottom: 30px;
+}
+
+.events p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.event-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #111;
+    border: 2px solid #c40000;
+    padding: 20px 25px;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.event-info h2 {
+    margin: 0 0 8px 0;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.event-info p {
+    margin: 3px 0;
+    font-size: 15px;
+    color: #ccc;
+}
+
+.event-tag {
+    background-color: #c40000;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* ===== MOBILE EVENTS ===== */
+@media (max-width: 900px) {
+
+    .event-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .event-tag {
+        align-self: flex-start;
+    }
+}
