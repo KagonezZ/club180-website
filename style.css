@@ -55,6 +55,10 @@ header {
     opacity: 1;              /* wichtig */
 }
 
+.header-nav ul li a.active {
+    color: #c40000;
+}
+
 .header-nav ul li a:hover {
     color: #c40000;
 }
@@ -451,3 +455,4 @@ header {
         align-self: flex-start;
     }
 }
+
