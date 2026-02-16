@@ -77,14 +77,38 @@
 
 </main>
 <script>
-const countdownElement = document.getElementById('countdown');
-if(countdownElement){
-    const eventDate = new Date('2026-03-15T18:00:00');
-    const now = new Date();
+// Termine sortieren und Highlight setzen
+const eventCards = Array.from(document.querySelectorAll('.event-card'));
+
+eventCards.sort((a, b) => {
+    const dateA = new Date(a.querySelector('.event-countdown').dataset.date);
+    const dateB = new Date(b.querySelector('.event-countdown').dataset.date);
+    return dateA - dateB;
+});
+
+// Container neu anordnen
+const container = document.querySelector('.events-list');
+container.innerHTML = '';
+eventCards.forEach(card => container.appendChild(card));
+
+// Nächstes Event automatisch hervorheben
+const now = new Date();
+let highlighted = false;
+
+eventCards.forEach(card => {
+    const countdownEl = card.querySelector('.event-countdown');
+    const eventDate = new Date(countdownEl.dataset.date);
     const diff = eventDate - now;
-    const days = Math.max(Math.ceil(diff / (1000 * 60 * 60 * 24)), 0);
-    countdownElement.textContent = `Noch ${days} Tage`;
-}
+    const days = Math.max(Math.ceil(diff / (1000*60*60*24)), 0);
+    countdownEl.textContent = `Noch ${days} Tage`;
+
+    if(!highlighted && diff >= 0){
+        card.classList.add('highlight');
+        highlighted = true;
+    } else {
+        card.classList.remove('highlight');
+    }
+});
 </script>
 
 </body>
