@@ -415,7 +415,6 @@ header {
     display: flex;
     align-items: center;
     justify-content: flex-start; /* einheitlich für alle */
-    gap: 5px; /* Abstand zwischen Icon und Text */
     background-color: #111;
     border: 2px solid #c40000;
     padding: 15px 25px;
@@ -504,6 +503,7 @@ header {
         align-self: flex-start;
     }
 }
+
 
 
 
