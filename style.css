@@ -411,6 +411,7 @@ header {
     gap: 20px;
 }
 
+/* ===== EVENTS ===== */
 .event-card {
     display: flex;
     justify-content: space-between;
@@ -420,18 +421,32 @@ header {
     padding: 20px 25px;
     border-radius: 8px;
     text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
+/* Subtiler Hover-Effekt */
+.event-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(196, 0, 0, 0.5);
+}
+
+/* Links innerhalb der Karten - keine blaue Unterstreichung */
 .event-card a {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     text-decoration: none;
-    color: inherit;
+    color: inherit; /* Schriftfarbe wie bisher */
 }
+
 .event-card a:hover .event-tag {
-    background-color: #ff1a1a;
+    background-color: #ff1a1a; /* nur der rote Tag wird beim Hover etwas stärker */
+}
+
+/* Highlight-Klasse komplett entfernen */
+.event-card.highlight {
+    /* wird nicht mehr benötigt */
 }
 
 .event-info h2 {
@@ -488,6 +503,7 @@ header {
         align-self: flex-start;
     }
 }
+
 
 
 
