@@ -431,7 +431,6 @@ header {
 .event-card a {
     display: flex;
     align-items: center;
-    gap: 15px; /* gleichmäßiger Abstand bei klickbaren Cards */
     width: 100%;
     text-decoration: none;
     color: inherit;
@@ -503,4 +502,5 @@ header {
         align-self: flex-start;
     }
 }
+
 
