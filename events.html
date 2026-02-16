@@ -40,7 +40,7 @@
 
 <div class="events-list">
 
-<div class="event-card highlight">
+<div class="event-card">
     <a href="https://www.noedsv.at/spielplan/vereinsturnier" target="_blank">
         <div class="event-info">
             <h2>Vereinsturnier</h2>
@@ -77,37 +77,12 @@
 
 </main>
 <script>
-// Termine sortieren und Highlight setzen
-const eventCards = Array.from(document.querySelectorAll('.event-card'));
-
-eventCards.sort((a, b) => {
-    const dateA = new Date(a.querySelector('.event-countdown').dataset.date);
-    const dateB = new Date(b.querySelector('.event-countdown').dataset.date);
-    return dateA - dateB;
-});
-
-// Container neu anordnen
-const container = document.querySelector('.events-list');
-container.innerHTML = '';
-eventCards.forEach(card => container.appendChild(card));
-
-// Nächstes Event automatisch hervorheben
-const now = new Date();
-let highlighted = false;
-
-eventCards.forEach(card => {
-    const countdownEl = card.querySelector('.event-countdown');
-    const eventDate = new Date(countdownEl.dataset.date);
+document.querySelectorAll('.event-countdown').forEach(el => {
+    const eventDate = new Date(el.dataset.date);
+    const now = new Date();
     const diff = eventDate - now;
     const days = Math.max(Math.ceil(diff / (1000*60*60*24)), 0);
-    countdownEl.textContent = `Noch ${days} Tage`;
-
-    if(!highlighted && diff >= 0){
-        card.classList.add('highlight');
-        highlighted = true;
-    } else {
-        card.classList.remove('highlight');
-    }
+    el.textContent = `Noch ${days} Tage`;
 });
 </script>
 
