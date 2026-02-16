@@ -3,8 +3,8 @@ html, body {
     margin: 0;
     padding: 0;
     min-height: 100%;
-    overflow-x: hidden;   /* kein seitliches Scrollen */
-    overflow-y: auto;     /* vertikales Scrollen erlaubt */
+    overflow-x: hidden;
+    overflow-y: auto;
     background-color: #000;
     font-family: 'Open Sans', sans-serif;
     color: #fff;
@@ -58,12 +58,12 @@ header {
 
 /* ===== HERO ===== */
 .hero {
-    height: calc(100vh - 82px); /* Header abziehen */
+    height: calc(100vh - 82px);
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    background: 
+    background:
         linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
         url('assets/hero.jpg') center/cover no-repeat;
 }
@@ -79,7 +79,7 @@ header {
     opacity: 0.2;
     filter: grayscale(100%) brightness(60%);
     transform: translate(-50%, -50%);
-    z-index: 2; /* vor Logos / hinter Text */
+    z-index: 2;
     pointer-events: none;
 }
 
@@ -107,29 +107,31 @@ header {
     z-index: 3;
 }
 
+.hero-text h1,
+.hero-text p {
+    opacity: 0;
+    animation: flyInBottom 1s ease-out forwards;
+}
+
 .hero-text h1 {
     font-size: 50px;
     margin: 0;
-    opacity: 0;
-    animation: flyInBottom 1s ease-out forwards;
     animation-delay: 0.1s;
 }
 
 .hero-text p {
     font-size: 20px;
     margin-top: 10px;
-    opacity: 0;
-    animation: flyInBottom 1s ease-out forwards;
     animation-delay: 0.2s;
 }
 
-a.map-link {
-    color: #ffffff;
+.map-link {
+    color: #fff;
     text-decoration: none;
     font-weight: bold;
 }
 
-a.map-link:hover {
+.map-link:hover {
     color: #c40000;
     text-decoration: underline;
 }
@@ -140,15 +142,13 @@ a.map-link:hover {
     width: 100%;
     text-align: center;
     font-size: 12px;
-    color: #ffffff;
     opacity: 0.7;
     z-index: 2;
 }
 
-/* ===== CONTENT / ALLGEMEIN ===== */
+/* ===== CONTENT ===== */
 .content {
-    padding-top: 20px;    
-    padding-bottom: 60px;
+    padding: 20px 0 60px;
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
@@ -156,28 +156,28 @@ a.map-link:hover {
 
 .content h1,
 .content h2 {
-    margin-top: 20px;
-    margin-bottom: 15px;
+    margin: 20px 0 15px;
 }
 
-.content h1:first-child { margin-top: 0; }
+.content h1:first-child {
+    margin-top: 0;
+}
 
 .content p + h2,
-.content ul + h2 { margin-top: 50px; }
+.content ul + h2 {
+    margin-top: 50px;
+}
 
 .content p {
     margin: 10px 0;
     line-height: 1.6;
     font-size: 18px;
-    color: #fff;
 }
 
 /* ===== MITGLIEDSCHAFT ===== */
 .membership {
     padding: 60px 0;
-    width: 90%;
     max-width: 900px;
-    margin: 0 auto;
     text-align: center;
 }
 
@@ -185,14 +185,12 @@ a.map-link:hover {
     color: #c40000;
     font-size: 42px;
     margin-bottom: 30px;
-    text-align: center;
 }
 
 .membership h2 {
     color: #c40000;
     font-size: 28px;
-    margin-top: 60px;
-    margin-bottom: 20px;
+    margin: 60px 0 20px;
 }
 
 .membership p {
@@ -213,7 +211,6 @@ a.map-link:hover {
 .price {
     font-size: 48px;
     font-weight: bold;
-    color: #ffffff;
 }
 
 .price-info {
@@ -235,9 +232,7 @@ a.map-link:hover {
 /* ===== KONTAKT ===== */
 .contact {
     padding: 60px 0;
-    width: 90%;
     max-width: 900px;
-    margin: 0 auto;
     text-align: center;
 }
 
@@ -245,13 +240,11 @@ a.map-link:hover {
     color: #c40000;
     font-size: 42px;
     margin-bottom: 30px;
-    text-align: center;
 }
 
 .contact p {
     font-size: 18px;
     line-height: 1.6;
-    color: #fff;
     margin-bottom: 30px;
 }
 
@@ -310,27 +303,28 @@ a.map-link:hover {
 .fly-in-right { opacity: 0; animation: flyInRight 1.2s ease-out forwards; }
 .fly-in-bottom { opacity: 0; animation: flyInBottom 1s ease-out forwards; }
 
-@keyframes flyInLeft { 0% {opacity:0; transform:translateX(-150px);} 100% {opacity:1; transform:translateX(0);} }
-@keyframes flyInRight { 0% {opacity:0; transform:translateX(150px);} 100% {opacity:1; transform:translateX(0);} }
-@keyframes flyInBottom { 0% {opacity:0; transform:translateY(80px);} 100% {opacity:1; transform:translateY(0);} }
+@keyframes flyInLeft {
+    0% { opacity: 0; transform: translateX(-150px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes flyInRight {
+    0% { opacity: 0; transform: translateX(150px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes flyInBottom {
+    0% { opacity: 0; transform: translateY(80px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
 
 /* ===== MOBILE ===== */
 @media (max-width: 900px) {
-    html, body {
-        height: auto;
-        min-height: 100%;
-        overflow-x: hidden;
-        overflow-y: auto;
-        background-color: #000;
-    }
-
-    header { position: relative; width: 100%; }
 
     .hero {
         height: auto;
         min-height: 100svh;
         padding: 40px 0 80px;
-        background-size: cover;
     }
 
     .hero::before {
@@ -339,7 +333,8 @@ a.map-link:hover {
         top: 55%;
     }
 
-    .hero-logo, .hero-text {
+    .hero-logo,
+    .hero-text {
         position: static;
         transform: none;
         width: 100%;
@@ -348,36 +343,39 @@ a.map-link:hover {
     }
 
     .hero-logo img { height: 120px; }
-    .hero-text h1 { font-size: 32px; white-space: normal; }
+
+    .hero-text h1 { font-size: 32px; }
     .hero-text p { font-size: 17px; }
 
     .hero-copyright {
         position: relative;
-        bottom: auto;
         margin-top: 30px;
-        text-align: center;
     }
 
-    .header-nav ul { flex-wrap: wrap; justify-content: center; }
-    .header-nav ul li { margin: 6px 12px; }
-    .header-nav ul li a { font-size: 16px; }
+    .header-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
-    .social-icons { flex-direction: column; gap: 15px; }
+    .header-nav ul li {
+        margin: 6px 12px;
+    }
+
+    .header-nav ul li a {
+        font-size: 16px;
+    }
+
+    .social-icons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
     .contact-form input,
-    .contact-form textarea { width: 100%; }
+    .contact-form textarea {
+        width: 100%;
+    }
 
     .membership h1 { font-size: 34px; }
     .membership h2 { font-size: 24px; }
     .price { font-size: 40px; }
-}
-
-.fade-message {
-    opacity: 0;
-    transition: opacity 0.6s ease-in-out;
-    font-size: 16px;
-    text-align: center;
-}
-
-.fade-message.show {
-    opacity: 1;
 }
