@@ -414,13 +414,13 @@ header {
 /* ===== EVENTS ===== */
 .event-card {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: flex-start;
+    gap: 25px; /* Abstand zwischen Icon und Info */
     background-color: #111;
     border: 2px solid #c40000;
-    padding: 20px 25px;
+    padding: 15px 25px;
     border-radius: 8px;
-    text-align: left;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -442,11 +442,6 @@ header {
 
 .event-card a:hover .event-tag {
     background-color: #ff1a1a; /* nur der rote Tag wird beim Hover etwas stärker */
-}
-
-/* Highlight-Klasse komplett entfernen */
-.event-card.highlight {
-    /* wird nicht mehr benötigt */
 }
 
 .event-info h2 {
@@ -504,18 +499,6 @@ header {
     }
 }
 
-.event-card {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 25px; /* Abstand zwischen Icon und Info */
-    background-color: #111;
-    border: 2px solid #c40000;
-    padding: 15px 25px;
-    border-radius: 8px;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
 .event-card .event-icon {
     font-size: 32px;
     width: 50px; /* gleichmäßige Breite */
@@ -525,4 +508,5 @@ header {
 .event-card .event-info {
     flex: 1; /* Info nimmt den restlichen Platz ein */
 }
+
 
