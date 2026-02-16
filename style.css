@@ -1,5 +1,3 @@
-Bitte wieder bereinigen. Bestimmt wieder etwas doppelt... Die "event" Sachen wo man draufklicken kann sollen wieder wie vorher sein.
-
 /* ===== GLOBAL ===== */
 html, body {
     margin: 0;
@@ -446,6 +444,11 @@ header {
     background-color: #ff1a1a; /* nur der rote Tag wird beim Hover etwas stärker */
 }
 
+/* Highlight-Klasse komplett entfernen */
+.event-card.highlight {
+    /* wird nicht mehr benötigt */
+}
+
 .event-info h2 {
     margin: 0 0 8px 0;
     font-size: 20px;
@@ -505,7 +508,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 25px; /* Abstand zwischen Icon und Info */
+    gap: 15px; /* Abstand zwischen Icon und Info */
     background-color: #111;
     border: 2px solid #c40000;
     padding: 15px 25px;
