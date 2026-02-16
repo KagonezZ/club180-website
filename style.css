@@ -504,6 +504,33 @@ header {
     }
 }
 
+.event-card {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px; /* Abstand zwischen Icon und Info */
+    background-color: #111;
+    border: 2px solid #c40000;
+    padding: 15px 25px;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
 
+.event-card .event-icon {
+    font-size: 32px;
+    width: 50px; /* gleichmäßige Breite */
+    text-align: center;
+}
 
+.event-card .event-info {
+    flex: 1; /* Info nimmt den restlichen Platz ein */
+}
 
+.event-card .event-tag {
+    background-color: #c40000;
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    white-space: nowrap;
+}
