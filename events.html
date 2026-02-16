@@ -76,12 +76,30 @@
 
 </main>
 <script>
-document.querySelectorAll('.event-countdown').forEach(el => {
-    const eventDate = new Date(el.dataset.date);
-    const now = new Date();
-    const diff = eventDate - now;
-    const days = Math.max(Math.ceil(diff / (1000*60*60*24)), 0);
-    el.textContent = `Noch ${days} Tage`;
+const container = document.querySelector('.events-list');
+const eventCards = Array.from(container.querySelectorAll('.event-card'));
+
+// Sortiere nach Datum (nächster Termin zuerst)
+eventCards.sort((a, b) => {
+    const dateA = new Date(a.querySelector('.event-countdown').dataset.date);
+    const dateB = new Date(b.querySelector('.event-countdown').dataset.date);
+    return dateA - dateB;
+});
+
+// Container leeren und sortierte Karten wieder einfügen
+container.innerHTML = '';
+eventCards.forEach(card => container.appendChild(card));
+
+// Countdown berechnen
+const now = new Date();
+eventCards.forEach(card => {
+    const countdownEl = card.querySelector('.event-countdown');
+    if(countdownEl){
+        const eventDate = new Date(countdownEl.dataset.date);
+        const diff = eventDate - now;
+        const days = Math.max(Math.ceil(diff / (1000*60*60*24)), 0);
+        countdownEl.textContent = `Noch ${days} Tage`;
+    }
 });
 </script>
 
