@@ -455,7 +455,8 @@ header {
 }
 
 .event-card .event-info {
-    flex: 1; /* nimmt immer den restlichen Platz ein */
+    flex: 1;             /* Info nimmt den restlichen Platz ein */
+    margin-left: 25px;   /* Abstand zwischen Icon und Text */
 }
 
 .event-info h2 {
@@ -473,10 +474,17 @@ header {
 .event-card .event-tag {
     background-color: #c40000;
     color: #fff;
-    padding: 5px 12px;
-    border-radius: 5px;
+    padding: 8px 16px;   /* etwas größer als vorher */
+    border-radius: 12px; /* abgerundete Ecken */
     font-weight: bold;
+    font-size: 16px;     /* größere Schrift */
     white-space: nowrap;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.event-card a:hover .event-tag {
+    background-color: #ff1a1a;
+    transform: scale(1.05); /* leichtes „aufpoppen“ beim Hover */
 }
 
 .event-countdown {
@@ -502,3 +510,4 @@ header {
         align-self: flex-start;
     }
 }
+
